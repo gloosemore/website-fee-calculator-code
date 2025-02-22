@@ -2,6 +2,100 @@
 <html>
 <head>
     <title>Tax Pricing</title>
+    <!-- Material UI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@mui/material@5.14.5/dist/material-ui.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            transition: border-color 0.3s ease;
+        }
+        .card:hover {
+            border-color: #1976d2;
+        }
+        .price {
+            color: #1976d2;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- First Row -->
+        <div class="mui-row" style="margin-bottom: 16px;">
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>STANDARD</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$150</h6>
+                </div>
+            </div>
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>EMPLOYED ONLY</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$115</h6>
+                </div>
+            </div>
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>DISABLED</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$115</h6>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="mui-row" style="margin-bottom: 16px;">
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>SENIORS</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$130</h6>
+                </div>
+            </div>
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>GIG ECONOMY</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$175</h6>
+                </div>
+            </div>
+            <div class="mui-col-md-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>HOME DAY CARE</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$185</h6>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Row (Single Centered Card) -->
+        <div class="mui-row">
+            <div class="mui-col-md-4 mui-col-md-offset-4">
+                <div class="mui-panel card" onclick="alert('Hello')">
+                    <h3>FULL-TIME STUDENTS</h3>
+                    <p>Details...</p>
+                    <h6 class="price">$85</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Pricing</title>
     <style>
         .grid {
             display: grid;
@@ -31,7 +125,6 @@
             <p>Details...</p>
             <h6>$150</h6>
         </div>
-        <!-- Add other 6 cards here -->
     </div>
 </body>
-</html>
+</html> -->
