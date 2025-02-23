@@ -82,6 +82,41 @@ $(document).ready(function () {
 
     updatePrices();
   });
+
+  $(".add-on-but").click(function () {
+    const cls = $(this).attr("class");
+    if (cls.includes("part")) {
+      if (cls.includes("rent")) {
+        if (cls.includes("increm")) {
+          partRentAddOns += 1;
+        } else {
+          partRentAddOns -= 1;
+        }
+      } else {
+        if (cls.includes("increm")) {
+          partBusAddOns += 1;
+        } else {
+          partBusAddOns -= 1;
+        }
+      }
+    } else {
+      if (cls.includes("rent")) {
+        if (cls.includes("increm")) {
+          meRentAddOns += 1;
+        } else {
+          meRentAddOns -= 1;
+        }
+      } else {
+        if (cls.includes("increm")) {
+          meBusAddOns += 1;
+        } else {
+          meBusAddOns -= 1;
+        }
+      }
+    }
+
+    updatePrices();
+  });
 });
 
 const fillPkgGrid = function () {
@@ -241,120 +276,13 @@ const updatePrices = function () {
   );
   $("#price-total-bus").html("$" + priceTotalBusAddOns);
 
-  // 	// business add-ons
-  //   meBusAddOnsDiscount = 0;
-  //   switch (mePkgType) {
-  //     case "GIG ECONOMY":
-  //       meBusAddOnsDiscount = 2;
-  //       break;
-  //     case "HOME DAY CARE":
-  //       meBusAddOnsDiscount = 1;
-  //       break;
-  //   }
-  //   const meBillableBusAddOns = meBusAddOns - meBusAddOnsDiscount;
-  //   partBusAddOnsDiscount = 0;
-  //   switch (partPkgType) {
-  //     case "GIG ECONOMY":
-  //       partBusAddOnsDiscount = 2;
-  //       break;
-  //     case "HOME DAY CARE":
-  //       partBusAddOnsDiscount = 1;
-  //       break;
-  //   }
-  //   const partBillableBusAddOns = partBusAddOns - partBusAddOnsDiscount;
-  //   priceBusTotal = (meBillableBusAddOns + partBillableBusAddOns) * busAddOnPrice;
-  //   // rental add ons ( no discounts)
-  //   meRentAddOnsDiscount = 0;
-  //   const meBillableRentAddOns = meRentAddOns - meRentAddOnsDiscount;
-  //   partRentAddOnsDiscount = 0;
-  //   const partBillableRentAddOns = partRentAddOns - partRentAddOnsDiscount;
-  //   const totalBillableRentAddOns = meBillableRentAddOns + partBillableRentAddOns;
-  //   price;
-  //   priceBusTotal = (meBillableBusAddOns + partBillableBusAddOns) * busAddOnPrice;
+  const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
+  const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
+  const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
+
+  $("#price-me-rent").html("(" + totalMeRentAddOns + ") $" + priceMeRentAddOns);
+  $("#price-part-rent").html(
+    "(" + totalPartRentAddOns + ") $" + pricePartRentAddOns
+  );
+  $("#price-total-rent").html("$" + priceTotalRentAddOns);
 };
-
-// const fillAddOnGrid = function () {
-//   var html = "";
-//   html += "<div class='add-on'>";
-//   html += "<div class='add-on-left-wrap'>";
-//   html += "<div>Business Add-On</div>";
-//   html += "</div>";
-//   html += "<div class='add-on-right-wrap'>";
-//   html += "<div>For Me: 0</div>";
-//   html +=
-//     "<button id='add-on-me-bus-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
-//   html +=
-//     "<button id='add-on-me-bus-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
-//   html += "<div>Partner: 0</div>";
-//   html +=
-//     "<button id='add-on-part-bus-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
-//   html +=
-//     "<button id='add-on-part-bus-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
-//   html += "</div>";
-//   html += "</div>";
-//   html += "<div class='add-on'>";
-//   html += "<div class='add-on-left-wrap'>";
-//   html += "<div>Rental Property Add-On</div>";
-//   html += "</div>";
-//   html += "<div class='add-on-right-wrap'>";
-//   html += "<div>For Me: 0</div>";
-//   html +=
-//     "<button id='add-on-me-rent-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
-//   html +=
-//     "<button id='add-on-me-rent-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
-//   html += "<div>Partner: 0</div>";
-//   html +=
-//     "<button id='add-on-part-rent-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
-//   html +=
-//     "<button id='add-on-part-rent-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
-//   html += "</div>";
-//   html += "</div>";
-
-//   $("#add-on-container").html(html);
-// };
-
-// const fillSummaryPrice = function () {
-//   var html = "";
-
-//   html += "<div id='summary-wrap'>";
-//   // title column
-//   html += "<div class='summary-column col-md-3>";
-//   html += "<div>Service</div>";
-//   html += "<div>Core</div>";
-//   html += "<div>Businesses</div>";
-//   html += "<div>Rentals</div>";
-//   html += "</div>";
-
-//   // me column
-//   html += "<div class='summary-column col-md-3>";
-//   html += "<div>For Me</div>";
-//   html += "<div>X</div>";
-//   html += "<div>0</div>";
-//   html += "<div>0</div>";
-//   html += "</div>";
-
-//   // partner column
-//   html += "<div class='summary-column col-md-3>";
-//   html += "<div>Partner</div>";
-//   html += "<div>X</div>";
-//   html += "<div>0</div>";
-//   html += "<div>0</div>";
-//   html += "<div>Subtotal</div>";
-//   html += "<div>HST</div>";
-//   html += "<div>Total</div>";
-//   html += "</div>";
-
-//   // price column
-//   html += "<div class='summary-column col-md-3>";
-//   html += "<div>Price</div>";
-//   html += "<div>100</div>";
-//   html += "<div>200</div>";
-//   html += "<div>300</div>";
-//   html += "<div>600</div>";
-//   html += "<div>85</div>";
-//   html += "<div>685</div>";
-//   html += "</div>";
-//   html += "</div>";
-
-//   $("#summary-container").html(html);
-// };
