@@ -14,7 +14,6 @@
             height: 275px;            
             display: flex;
             flex-direction: column;
-            margin: 5px;
         }
 
         .custom-card-top-wrap {
@@ -129,7 +128,7 @@
         for (var row = 1; row <= rowCount; row++) {
             if (currPkgNumb > pkgs.length) break;
             
-            html += "<div class='row'>"
+            html += "<div class='row gx-5'>"
             
             for (var col = 1; col <= colCount; col++) {
                 if (currPkgNumb > pkgs.length) break;
