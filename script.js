@@ -280,9 +280,9 @@ const updatePrices = function () {
   const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
   const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
 
-  $("#price-me-rent").html("(" + totalMeRentAddOns + ") $" + priceMeRentAddOns);
+  $("#price-me-rent").html("(" + meRentAddOns + ") $" + priceMeRentAddOns);
   $("#price-part-rent").html(
-    "(" + totalPartRentAddOns + ") $" + pricePartRentAddOns
+    "(" + partRentAddOns + ") $" + pricePartRentAddOns
   );
   $("#price-total-rent").html("$" + priceTotalRentAddOns);
 };
