@@ -36,11 +36,11 @@
             transition: all 0.2s ease;
             border-width: 2px;
         }
-        .btn-outline-primary {
+        .btn-style-primary {
             border-color: #0d6efd;
             color: #0d6efd;
         }
-        .btn-outline-success {
+        .btn-style-success {
             border-color: #198754;
             color: #198754;
         }
@@ -77,37 +77,22 @@
             console.log("buttonId=", buttonId);
             const pkgType = buttonId.substring(8, 30);
             console.log("pkgType=", pkgType);
+            
             mePkgType = pkgType;
-
-            // switch (buttonId) {
-            //     case "pkgMeBut" + "STANDARD":
-            //         console.log("selected STANDARD")
-            //         break;
-            //     case "pkgMeBut" + "EMPLOYED ONLY":
-            //         console.log("selected EMPLOYED ONLY")
-            //         break;
-            //     case "pkgMeBut" + "DISABLED":
-            //         console.log("selected DISABLED")
-            //         break;
-            //     case "pkgMeBut" + "SENIORS":
-            //         console.log("selected SENIORS")
-            //         break;
-            //     case "pkgMeBut" + "GIG ECONOMY":
-            //         console.log("selected GIG ECONOMY")
-            //         break;
-            //     case "pkgMeBut" + "HOME DAY CARE":
-            //         console.log("selected HOME DAY CARE")
-            //         break;
-            //     case "pkgMeBut" + "FULL-TIME STUDENTS":
-            //         console.log("selected FULL-TIME STUDENTS")
-            //         break;
-                        
-        });
+            $(".pkgMeBut").removeClass("btn-style-success").addClass("btn-style-primary");
+            $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+       });
 
         // Handle "Partner" button clicks
         $('.pkgPartBut').click(function() {
-            const buttonId = $(this).attr('id');
-            console.log("hello " + buttonId);
+            const buttonId = $(this).attr('id');            
+            console.log("buttonId=", buttonId);
+            const pkgType = buttonId.substring(8, 30);
+            console.log("pkgType=", pkgType);
+            
+            partPkgType = pkgType;
+            $(".pkgPartBut").removeClass("btn-style-success").addClass("btn-style-primary");
+            $(this).removeClass("btn-style-primary").addClass("btn-style-success");
         });
 
     });
@@ -176,10 +161,10 @@
                     html += "<div class='custom-card-bot-wrap'>";
                         html += "<div class='row g-2'>";
                             html += "<div class='col-6'>";
-                                html += "<button id='pkgMeBut" + currPkg["name"] + "' class='pkgMeBut btn btn-outline-primary w-100'>For Me</button>";
+                                html += "<button id='pkgMeBut" + currPkg["name"] + "' class='pkgMeBut btn btn-style-primary w-100'>For Me</button>";
                             html += "</div>";
                             html += "<div class='col-6'>";
-                                html += "<button id='pkgPartBut" + currPkg["name"] + "' class='pkgPartBut btn btn-outline-primary w-100'>Partner</button>";
+                                html += "<button id='pkgPartBut" + currPkg["name"] + "' class='pkgPartBut btn btn-style-primary w-100'>Partner</button>";
                             html += "</div>";
                         html += "</div>";
                     html += "</div>";
