@@ -55,6 +55,11 @@
             border-color: #198754;
             color: #198754;
         }
+        .btn-style-plus-minus {
+            border-color: #0d6efd;
+            color: #0d6efd;
+            border-radius: 1000px;
+        }
     </style>
 </head>
 <body>
@@ -141,12 +146,12 @@
             }, 
             {
                 "name": "GIG ECONOMY",
-                "desc": "<p><b><i>Core Tax Service</i></b> for gig workers</p><p>Also includes <b><i>2 Business</i></b> Add-Ons</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for gig workers. Also includes <b><i>2 Business</i></b> Add-Ons</p>",
                 "price": "$175"
             }, 
             {
                 "name": "HOME DAY CARE",
-                "desc": "<p><b><i>Core Tax Service</i></b> for day care providers</p><p>Also includes <b><i>1 Business</i></b> Add-On</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for day care providers. Also includes <b><i>1 Business</i></b> Add-On</p>",
                 "price": "$185"
             }, 
             {
@@ -198,11 +203,20 @@
         html += "<div class='add-on'>";
             html += "<div>Business Add-On</div>";
             html += "<div>For Me: 0</div>";
-            html += "<button>+</button>";
-            html += "<button>-</button>";           
+            html += "<button id='add-on-me-bus-increm-but' class='add-on-me-but btn btn-style-plus-minus'>-</button>";
+            html += "<button id='add-on-me-bus-decrem-but' class='add-on-me-but btn btn-style-plus-minus'>+</button>";
             html += "<div>Partner: 0</div>";            
-            html += "<button>+</button>";
-            html += "<button>-</button>";           
+            html += "<button id='add-on-part-bus-increm-but' class='add-on-part-but btn btn-style-plus-minus'>-</button>";
+            html += "<button id='add-on-part-bus-decrem-but' class='add-on-part-but btn btn-style-plus-minus'>+</button>";
+        html += "<div>";
+            html += "<div class='add-on'>";
+            html += "<div>Rental Property Add-On</div>";
+            html += "<div>For Me: 0</div>";
+            html += "<button id='add-on-me-rent-increm-but' class='add-on-me-but btn btn-style-plus-minus'>-</button>";
+            html += "<button id='add-on-me-rent-decrem-but' class='add-on-me-but btn btn-style-plus-minus'>+</button>";
+            html += "<div>Partner: 0</div>";            
+            html += "<button id='add-on-part-rent-increm-but' class='add-on-part-but btn btn-style-plus-minus'>-</button>";
+            html += "<button id='add-on-part-rent-decrem-but' class='add-on-part-but btn btn-style-plus-minus'>+</button>";
         html += "<div>";
 
         $("#add-on-container").html(html);
