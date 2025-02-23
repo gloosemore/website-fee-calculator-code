@@ -68,6 +68,9 @@
     var partRentAddOns = 0;
     
     $(document).ready(function() {
+
+        fillPackageGrid();
+
         // Handle "For Me" button clicks
         $('.pkgMeBut').click(function() {
             const buttonId = $(this).attr('id');            
@@ -107,7 +110,6 @@
             console.log("hello " + buttonId);
         });
 
-        fillPackageGrid();
     });
 
     const fillPackageGrid = function() {
