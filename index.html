@@ -11,9 +11,10 @@
             border: 1px solid #dee2e6;
             border-radius: 8px;
             transition: all 0.3s ease;
-            height: 325px;            
+            height: 275px;            
             display: flex;
             flex-direction: column;
+            margin: 5px;
         }
 
         .custom-card-top-wrap {
@@ -141,7 +142,7 @@
                         html += "<h6 class='price'>" + currPkg["price"] + "</h6>";
                     html += "</div>";
                     html += "<div class='custom-card-bot-wrap'>";
-                        html += "<div class='row mt-3 g-2'>";
+                        html += "<div class='row g-2'>";
                             html += "<div class='col-6'>";
                                 html += "<button id='pkgMeBut" + currPkg["name"] + "' class='pkgMeBut btn btn-outline-primary w-100'>For Me</button>";
                             html += "</div>";
