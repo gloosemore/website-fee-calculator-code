@@ -225,9 +225,21 @@ const updatePrices = function () {
 
   const priceTotalCore = priceMeCore + pricePartCore;
 
-  $("#price-me-core").html(priceMeCore);
-  $("#price-part-core").html(pricePartCore);
-  $("#price-total-core").html(priceTotalCore);
+  $("#price-me-core").html("$" + priceMeCore);
+  $("#price-part-core").html("$" + pricePartCore);
+  $("#price-total-core").html("$" + priceTotalCore);
+
+  const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
+  const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
+  const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
+  const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
+  const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
+
+  $("#price-me-bus").html("(" + totalMeBusAddOns + ") $" + priceMeBusAddOns);
+  $("#price-part-bus").html(
+    "(" + totalPartBusAddOns + ") $" + pricePartBusAddOns
+  );
+  $("#price-total-bus").html("$" + priceTotalBusAddOns);
 
   // 	// business add-ons
   //   meBusAddOnsDiscount = 0;
