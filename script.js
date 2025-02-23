@@ -28,7 +28,10 @@ $(document).ready(function () {
   $(".pkg-me-but").click(function () {
     const buttonId = $(this).attr("id");
     console.log("buttonId=", buttonId);
-    mePkgType = buttonId.substring(11, 30).replace(" ", "_").replace("-", "_");
+    mePkgType = buttonId
+      .substring(11, 30)
+      .replaceAll(" ", "_")
+      .replaceAll("-", "_");
     console.log("mePkgType=", mePkgType);
 
     meBusAddOnsDiscount = 0;
@@ -57,8 +60,8 @@ $(document).ready(function () {
     console.log("13=", buttonId.substring(13, 30));
     partPkgType = buttonId
       .substring(13, 30)
-      .replace(" ", "_")
-      .replace("-", "_");
+      .replaceAll(" ", "_")
+      .replaceAll("-", "_");
     console.log("partPkgType=", partPkgType);
 
     partBusAddOnsDiscount = 0;
