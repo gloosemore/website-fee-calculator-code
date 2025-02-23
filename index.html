@@ -28,8 +28,16 @@
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }
         
-        .add-on
-
+        #add-on-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .add-on {
+            display: flex;
+            flex-direction: row;
+            padding: 1rem;
+            background-color: yellow;
+        }
 
         .price {
             color: #0d6efd;
@@ -55,9 +63,9 @@
     <p>Every package includes our <b><i>Core Tax Service</i></b> which covers most tax-related needs.</p>
     <p>Those that are also <b><i>Business Owners</i></b> or have <b><i>Rental Properties</i></b> can add support for those with a small additional charge.</p>
 
-    <div id="pkgContainer" class="container"></div>
+    <div id="pkg-container" class="container"></div>
 
-    <div id="addOnContainer" class="container"></div>
+    <div id="add-on-container" class="container"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -118,32 +126,32 @@
             }, 
             {
                 "name": "EMPLOYEE ONLY",
-                "desc": "<p><b><i>Core Tax Service</i></b> for workers with only employment income<p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for workers with only employment income</p>",
                 "price": "$115"
             }, 
             {
                 "name": "DISABILITY",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for those with disability benefits<p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for those with disability benefits</p>",
                 "price": "$115"
             }, 
             {
                 "name": "SENIORS",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for those 65 or over</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for those 65 or over</p>",
                 "price": "$130"
             }, 
             {
                 "name": "GIG ECONOMY",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for gig workers</p><p>Includes <b><i>2 Business Add-Ons</i></b></p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for gig workers</p><p>Also includes <b><i>2 Business</i></b> Add-Ons</p>",
                 "price": "$175"
             }, 
             {
                 "name": "HOME DAY CARE",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for day care providers</p><p>Includes <b><i>1 Business Add-On</i></b></p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for day care providers</p><p>Also includes <b><i>1 Business</i></b> Add-On</p>",
                 "price": "$185"
             }, 
             {
                 "name": "FULL-TIME STUDENTS",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for students</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b> for students</p>",
                 "price": "$85"
             }
         ]
@@ -182,12 +190,12 @@
         }
                         
         html += "</div>";    
-        $("#pkgContainer").html(html);
+        $("#pkg-container").html(html);
     }
 
     const fillAddOnGrid = function() {
         var html = "";
-        html += "<div>";
+        html += "<div class='add-on'>";
             html += "<div>Business Add-On</div>";
             html += "<div>For Me: 0</div>";
             html += "<button>+</button>";
@@ -197,7 +205,7 @@
             html += "<button>-</button>";           
         html += "<div>";
 
-        $("#addOnContainer").html(html);
+        $("#add-on-container").html(html);
     }
 
 
