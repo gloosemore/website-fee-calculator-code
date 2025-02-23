@@ -80,7 +80,66 @@
     });
 
     const fillPackageGrid = function() {
-        const html = "<div class='row'>123</div>";    
+        const html = "";
+        const rowCount = 3;
+        const colCount = 3;
+        var row = 1;
+        var col = 1;
+
+        var pkgs = [
+            {
+                "name": "STANDARD",
+                "desc": "standard",
+                "price": "$150"
+            }, 
+            {
+                "name": "STANDARD",
+                "desc": "standard",
+                "price": "$150"
+            }, 
+            {
+                "name": "STANDARD",
+                "desc": "standard",
+                "price": "$150"
+            }, 
+        ]
+
+        var currPkgNumb = 1;
+        for (var row = 1; row <= rowCount; row++) {
+            if (currPkgNumb > pkgs.length) break;
+            
+            html += "<div class='row'>"
+            
+            for (var col = 1; col <= colCount; col++) {
+                if (currPkgNumb > pkgs.length) break;
+                
+                html += "<div class='custom-card col-md-4 p-3'>";
+                    html += "<div class='custom-card-top-wrap'>";
+                        html += "<h3>STANDARD</h3>";
+                        html += "<p><b><i>Core Tax Service</i></b></p>";
+                        html += "<h6 class='price'>$150</h6>";
+                    html += "</div>";
+                    html += "<div class='custom-card-bot-wrap'>";
+                        html += "<div class='row mt-3 g-2'>";
+                            html += "<div class='col-6'>";
+                                html += "<button id='pkgStandardMeBut' class='pkgMeBut btn btn-outline-primary w-100'>For Me</button>";
+                            html += "</div>";
+                            html += "<div class='col-6'>";
+                                html += "<button id='pkgStandardPartBut' class='pkgPartBut btn btn-outline-primary w-100'>Partner</button>";
+                            html += "</div>";
+                        html += "</div>";
+                    html += "</div>";
+                html += "</div>";                                
+                currPkgNumb += 1;
+
+            }
+
+            html += "</div>";            
+        }
+            
+            
+            
+        html += "</div>";    
         $("#pkgContainer").html(html);
     }
 
