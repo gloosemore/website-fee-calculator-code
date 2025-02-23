@@ -54,6 +54,7 @@ $(document).ready(function () {
   $(".pkg-part-but").click(function () {
     const buttonId = $(this).attr("id");
     console.log("buttonId=", buttonId);
+    console.log("13=", buttonId.substring(13, 30));
     partPkgType = buttonId
       .substring(13, 30)
       .replace(" ", "_")
