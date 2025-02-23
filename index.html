@@ -15,16 +15,12 @@
             display: flex;
             flex-direction: column;
         }
-
         .custom-card-top-wrap {
             flex-shrink: 0; /* Prevent shrinking */
-            background: lightblue;
             padding: 1rem;
         }
-
         .custom-card-bot-wrap {
             flex-shrink: 0; /* Prevent shrinking */
-            background: lightcoral;
             margin-top: auto; /* Push to bottom */
         }
         .custom-card:hover {
@@ -63,11 +59,46 @@
 
     <!-- Custom JavaScript -->
     <script>
+
+    var mePkgType = "";
+    var meBusAddOns = 0;
+    var meRentAddOns = 0;
+    var partPkgType = "";
+    var partBusAddOns = 0;
+    var partRentAddOns = 0;
+    
     $(document).ready(function() {
         // Handle "For Me" button clicks
         $('.pkgMeBut').click(function() {
-            const buttonId = $(this).attr('id');
-            console.log("hello " + buttonId);
+            const buttonId = $(this).attr('id');            
+            console.log("buttonId=", buttonId);
+            const pkgType = buttonId.substring(8, 30);
+            console.log("pkgType=", pkgType);
+            mePkgType = pkgType;
+
+            // switch (buttonId) {
+            //     case "pkgMeBut" + "STANDARD":
+            //         console.log("selected STANDARD")
+            //         break;
+            //     case "pkgMeBut" + "EMPLOYED ONLY":
+            //         console.log("selected EMPLOYED ONLY")
+            //         break;
+            //     case "pkgMeBut" + "DISABLED":
+            //         console.log("selected DISABLED")
+            //         break;
+            //     case "pkgMeBut" + "SENIORS":
+            //         console.log("selected SENIORS")
+            //         break;
+            //     case "pkgMeBut" + "GIG ECONOMY":
+            //         console.log("selected GIG ECONOMY")
+            //         break;
+            //     case "pkgMeBut" + "HOME DAY CARE":
+            //         console.log("selected HOME DAY CARE")
+            //         break;
+            //     case "pkgMeBut" + "FULL-TIME STUDENTS":
+            //         console.log("selected FULL-TIME STUDENTS")
+            //         break;
+                        
         });
 
         // Handle "Partner" button clicks
@@ -89,7 +120,7 @@
         var pkgs = [
             {
                 "name": "STANDARD",
-                "desc": "<p><b><i>Core Tax Service</i></b><p>",
+                "desc": "<p><b><i>Core Tax Service</i></b><p> for most individuals",
                 "price": "$150"
             }, 
             {
@@ -109,12 +140,12 @@
             }, 
             {
                 "name": "GIG ECONOMY",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for gig workers</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for gig workers</p><p>Includes <b><i>2 Business Add-Ons</i></b></p>",
                 "price": "$175"
             }, 
             {
                 "name": "HOME DAY CARE",
-                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for day care providers</p>",
+                "desc": "<p><b><i>Core Tax Service</i></b><sup>*</sup> for day care providers</p><p>Includes <b><i>1 Business Add-On</i></b></p>",
                 "price": "$185"
             }, 
             {

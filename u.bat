@@ -3,4 +3,3 @@ cd /d "C:\Users\gmloo\OneDrive\Documents\Projects-Ongoing\Website Fee Calculator
 git add .
 git commit -m "ok"
 git push
-pause
