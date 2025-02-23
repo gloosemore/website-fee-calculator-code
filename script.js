@@ -266,8 +266,14 @@ const updatePrices = function () {
   $("#price-part-core").html("$" + pricePartCore);
   $("#price-total-core").html("$" + priceTotalCore);
 
+  console.log("meBusAddOns=", meBusAddOns);
+  console.log("meBusAddOnsDiscount=", meBusAddOnsDiscount);
+
   const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
   const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
+
+  console.log("priceMeBusAddOns=", priceMeBusAddOns);
+
   const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
   const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
   const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
