@@ -117,6 +117,8 @@ $(document).ready(function () {
 
     updatePrices();
   });
+
+  updatePrices();
 });
 
 const fillPkgGrid = function () {
