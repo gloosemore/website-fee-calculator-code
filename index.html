@@ -14,7 +14,6 @@
             height: 325px;            
             display: flex;
             flex-direction: column;
-            width: 25%;
         }
 
         .custom-card-top-wrap {
@@ -60,127 +59,60 @@
     <div class="container py-5">
         <!-- First Row -->
         <div class="row g-4 mb-4">
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
-                    <div class="custom-card-top-wrap">
-                        <h3>STANDARD</h3>
-                        <p><b><i>Core Tax Service</i></b></p>
-                        <h6 class="price">$150</h6>
-                    </div>  
-                    <div class="custom-card-bot-wrap">
-                        <div class="row mt-3 g-2">
-                            <div class="col-6">
-                                    <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                                </div>
-                                <div class="col-6">
-                                    <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                                </div>
+            <div class="custom-card col-md-4 p-3">
+                <div class="custom-card-top-wrap">
+                    <h3>STANDARD</h3>
+                    <p><b><i>Core Tax Service</i></b></p>
+                    <h6 class="price">$150</h6>
+                </div>  
+                <div class="custom-card-bot-wrap">
+                    <div class="row mt-3 g-2">
+                        <div class="col-6">
+                                <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
                             </div>
-                        </div>    
-                    </div>
+                            <div class="col-6">
+                                <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
             </div>
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
+
+            <div class="custom-card col-md-4 p-3">
+                <div class="custom-card-top-wrap">
                     <h3>EMPLOYED ONLY</h3>
-                    <p><b><i>Core Tax Service</i></b><sup>*</sup> for workers with only employment income</p>
-                    <h6 class="price">$115</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
+                    <p><b><i>Core Tax Service</i></b></p>
+                    <h6 class="price">$150</h6>
+                </div>  
+                <div class="custom-card-bot-wrap">
+                    <div class="row mt-3 g-2">
                         <div class="col-6">
-                            <button id='pkgEmployedMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
+                                <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
+                            </div>
+                            <div class="col-6">
+                                <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <button id='pkgEmployedPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
+
+            <div class="custom-card col-md-4 p-3">
+                <div class="custom-card-top-wrap">
                     <h3>DISABLED</h3>
-                    <p>Core Tax Service for those with disability benefits</p>
-                    <h6 class="price">$115</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
-                        <div class="col-6">
-                            <button id='pkgDisabledMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                        </div>
-                        <div class="col-6">
-                            <button id='pkgDisabledPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Second Row -->
-        <div class="row g-4 mb-4">
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
-                    <h3>SENIORS</h3>
-                    <p><b><i>Core Tax Service</i></b><sup>*</sup> for those 65 or older</p>
-                    <h6 class="price">$130</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
-                        <div class="col-6">
-                            <button id='pkgSeniorsMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                        </div>
-                        <div class="col-6">
-                            <button id='pkgSeniorsPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
-                    <h3>GIG ECONOMY</h3>
-                    <p><b><i>Core Tax Service</i></b><sup>*</sup> for gig workers. Includes 2 Business Add-Ons</p>
-                    <h6 class="price">$175</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
-                        <div class="col-6">
-                            <button id='pkgGigMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                        </div>
-                        <div class="col-6">
-                            <button id='pkgGigPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
-                <div class="custom-card p-3">
-                    <h3>HOME DAY CARE</h3>
-                    <p><b><i>Core Tax Service</i></b><sup>*</sup> for day care providers. Includes 1 Business Add-On</p>
-                    <h6 class="price">$185</h6>
+                    <p><b><i>Core Tax Service</i></b></p>
+                    <h6 class="price">$150</h6>
+                </div>  
+                <div class="custom-card-bot-wrap">
                     <div class="row mt-3 g-2">
                         <div class="col-6">
-                            <button id='pkgDaycareMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
+                                <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
+                            </div>
+                            <div class="col-6">
+                                <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <button id='pkgDaycarePartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Third Row (Centered) -->
-        <div class="row g-4">
-            <div class="col-md-4 h-100 offset-md-4">
-                <div class="custom-card p-3">
-                    <h3>FULL-TIME STUDENTS</h3>
-                    <p><b><i>Core Tax Service</i></b><sup>*</sup> for full-time students</p>
-                    <h6 class="price">$85</h6>
-                    <div class="mb-3"></div>
-                    <div class="row mt-3 g-2">
-                        <div class="col-6">
-                            <button id='pkgStudentMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                        </div>
-                        <div class="col-6">
-                            <button id='pkgStudentPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
         </div>
