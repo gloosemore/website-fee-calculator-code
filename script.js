@@ -7,8 +7,6 @@ var partRentAddOns = 0;
 
 $(document).ready(function () {
   fillPkgGrid();
-  fillAddOnGrid();
-  fillSummaryPrice();
 
   // Handle "For Me" button clicks
   $(".pkg-me-but").click(function () {
@@ -127,88 +125,88 @@ const fillPkgGrid = function () {
   $("#pkg-container").html(html);
 };
 
-const fillAddOnGrid = function () {
-  var html = "";
-  html += "<div class='add-on'>";
-  html += "<div class='add-on-left-wrap'>";
-  html += "<div>Business Add-On</div>";
-  html += "</div>";
-  html += "<div class='add-on-right-wrap'>";
-  html += "<div>For Me: 0</div>";
-  html +=
-    "<button id='add-on-me-bus-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
-  html +=
-    "<button id='add-on-me-bus-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
-  html += "<div>Partner: 0</div>";
-  html +=
-    "<button id='add-on-part-bus-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
-  html +=
-    "<button id='add-on-part-bus-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
-  html += "</div>";
-  html += "</div>";
-  html += "<div class='add-on'>";
-  html += "<div class='add-on-left-wrap'>";
-  html += "<div>Rental Property Add-On</div>";
-  html += "</div>";
-  html += "<div class='add-on-right-wrap'>";
-  html += "<div>For Me: 0</div>";
-  html +=
-    "<button id='add-on-me-rent-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
-  html +=
-    "<button id='add-on-me-rent-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
-  html += "<div>Partner: 0</div>";
-  html +=
-    "<button id='add-on-part-rent-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
-  html +=
-    "<button id='add-on-part-rent-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
-  html += "</div>";
-  html += "</div>";
+// const fillAddOnGrid = function () {
+//   var html = "";
+//   html += "<div class='add-on'>";
+//   html += "<div class='add-on-left-wrap'>";
+//   html += "<div>Business Add-On</div>";
+//   html += "</div>";
+//   html += "<div class='add-on-right-wrap'>";
+//   html += "<div>For Me: 0</div>";
+//   html +=
+//     "<button id='add-on-me-bus-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
+//   html +=
+//     "<button id='add-on-me-bus-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
+//   html += "<div>Partner: 0</div>";
+//   html +=
+//     "<button id='add-on-part-bus-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
+//   html +=
+//     "<button id='add-on-part-bus-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
+//   html += "</div>";
+//   html += "</div>";
+//   html += "<div class='add-on'>";
+//   html += "<div class='add-on-left-wrap'>";
+//   html += "<div>Rental Property Add-On</div>";
+//   html += "</div>";
+//   html += "<div class='add-on-right-wrap'>";
+//   html += "<div>For Me: 0</div>";
+//   html +=
+//     "<button id='add-on-me-rent-increm-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>-</button>";
+//   html +=
+//     "<button id='add-on-me-rent-decrem-but' class='add-on-me-but btn btn-style-plus-minus rounded-circle'>+</button>";
+//   html += "<div>Partner: 0</div>";
+//   html +=
+//     "<button id='add-on-part-rent-increm-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>-</button>";
+//   html +=
+//     "<button id='add-on-part-rent-decrem-but' class='add-on-part-but btn btn-style-plus-minus rounded-circle'>+</button>";
+//   html += "</div>";
+//   html += "</div>";
 
-  $("#add-on-container").html(html);
-};
+//   $("#add-on-container").html(html);
+// };
 
-const fillSummaryPrice = function () {
-  var html = "";
+// const fillSummaryPrice = function () {
+//   var html = "";
 
-  html += "<div id='summary-wrap'>";
-  // title column
-  html += "<div class='summary-column col-md-3>";
-  html += "<div>Service</div>";
-  html += "<div>Core</div>";
-  html += "<div>Businesses</div>";
-  html += "<div>Rentals</div>";
-  html += "</div>";
+//   html += "<div id='summary-wrap'>";
+//   // title column
+//   html += "<div class='summary-column col-md-3>";
+//   html += "<div>Service</div>";
+//   html += "<div>Core</div>";
+//   html += "<div>Businesses</div>";
+//   html += "<div>Rentals</div>";
+//   html += "</div>";
 
-  // me column
-  html += "<div class='summary-column col-md-3>";
-  html += "<div>For Me</div>";
-  html += "<div>X</div>";
-  html += "<div>0</div>";
-  html += "<div>0</div>";
-  html += "</div>";
+//   // me column
+//   html += "<div class='summary-column col-md-3>";
+//   html += "<div>For Me</div>";
+//   html += "<div>X</div>";
+//   html += "<div>0</div>";
+//   html += "<div>0</div>";
+//   html += "</div>";
 
-  // partner column
-  html += "<div class='summary-column col-md-3>";
-  html += "<div>Partner</div>";
-  html += "<div>X</div>";
-  html += "<div>0</div>";
-  html += "<div>0</div>";
-  html += "<div>Subtotal</div>";
-  html += "<div>HST</div>";
-  html += "<div>Total</div>";
-  html += "</div>";
+//   // partner column
+//   html += "<div class='summary-column col-md-3>";
+//   html += "<div>Partner</div>";
+//   html += "<div>X</div>";
+//   html += "<div>0</div>";
+//   html += "<div>0</div>";
+//   html += "<div>Subtotal</div>";
+//   html += "<div>HST</div>";
+//   html += "<div>Total</div>";
+//   html += "</div>";
 
-  // price column
-  html += "<div class='summary-column col-md-3>";
-  html += "<div>Price</div>";
-  html += "<div>100</div>";
-  html += "<div>200</div>";
-  html += "<div>300</div>";
-  html += "<div>600</div>";
-  html += "<div>85</div>";
-  html += "<div>685</div>";
-  html += "</div>";
-  html += "</div>";
+//   // price column
+//   html += "<div class='summary-column col-md-3>";
+//   html += "<div>Price</div>";
+//   html += "<div>100</div>";
+//   html += "<div>200</div>";
+//   html += "<div>300</div>";
+//   html += "<div>600</div>";
+//   html += "<div>85</div>";
+//   html += "<div>685</div>";
+//   html += "</div>";
+//   html += "</div>";
 
-  $("#summary-container").html(html);
-};
+//   $("#summary-container").html(html);
+// };
