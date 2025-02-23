@@ -80,7 +80,7 @@
     });
 
     const fillPackageGrid = function() {
-        const html = "";
+        var html = "";
         const rowCount = 3;
         const colCount = 3;
         var row = 1;
@@ -103,8 +103,8 @@
                 "price": "$150"
             }, 
         ]
-
         var currPkgNumb = 1;
+        
         for (var row = 1; row <= rowCount; row++) {
             if (currPkgNumb > pkgs.length) break;
             
@@ -142,62 +142,6 @@
         html += "</div>";    
         $("#pkgContainer").html(html);
     }
-
-        // <div class="row">
-        //     <div class="custom-card col-md-4 p-3">
-        //         <div class="custom-card-top-wrap">
-        //             <h3>STANDARD</h3>
-        //             <p><b><i>Core Tax Service</i></b></p>
-        //             <h6 class="price">$150</h6>
-        //         </div>  
-        //         <div class="custom-card-bot-wrap">
-        //             <div class="row mt-3 g-2">                            
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-        //                 </div>
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-        //                 </div>
-        //             </div>    
-        //         </div>
-        //     </div>
-
-        //     <div class="custom-card col-md-4 p-3">
-        //         <div class="custom-card-top-wrap">
-        //             <h3>STANDARD</h3>
-        //             <p><b><i>Core Tax Service</i></b></p>
-        //             <h6 class="price">$150</h6>
-        //         </div>  
-        //         <div class="custom-card-bot-wrap">
-        //             <div class="row mt-3 g-2">                            
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-        //                 </div>
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-        //                 </div>
-        //             </div>    
-        //         </div>
-        //     </div>
-
-        //     <div class="custom-card col-md-4 p-3">
-        //         <div class="custom-card-top-wrap">
-        //             <h3>STANDARD</h3>
-        //             <p><b><i>Core Tax Service</i></b></p>
-        //             <h6 class="price">$150</h6>
-        //         </div>  
-        //         <div class="custom-card-bot-wrap">
-        //             <div class="row mt-3 g-2">                            
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-        //                 </div>
-        //                 <div class="col-6">
-        //                     <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-        //                 </div>
-        //             </div>    
-        //         </div>
-        //     </div>
-        // </div>
 
     </script>
 </body>
