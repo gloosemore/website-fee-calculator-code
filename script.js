@@ -1,7 +1,7 @@
 const pricePkgSTANDARD = 150;
 const pricePkgEMPLOYEE_ONLY = 115;
-const pricePkgDISABLED = 125;
-const pricePkgSENIORS = 135;
+const pricePkgDISABLED = 120;
+const pricePkgSENIORS = 130;
 const pricePkgGIG_ECONOMY = 175;
 const pricePkgHOME_DAY_CARE = 185;
 const pricePkgFULL_TIME_STUDENTS = 85;
@@ -55,7 +55,7 @@ $(document).ready(function () {
     const buttonId = $(this).attr("id");
     console.log("buttonId=", buttonId);
     partPkgType = buttonId
-      .substring(11, 30)
+      .substring(13, 30)
       .replace(" ", "_")
       .replace("-", "_");
     console.log("partPkgType=", partPkgType);
@@ -223,7 +223,7 @@ const updatePrices = function () {
 
   $("#price-me-core").html(priceMeCore);
   $("#price-part-core").html(pricePartCore);
-  $("#price-total-cire").html(priceTotalCore);
+  $("#price-total-core").html(priceTotalCore);
 
   // 	// business add-ons
   //   meBusAddOnsDiscount = 0;
