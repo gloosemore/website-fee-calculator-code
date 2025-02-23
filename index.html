@@ -11,17 +11,28 @@
             border: 1px solid #dee2e6;
             border-radius: 8px;
             transition: all 0.3s ease;
-            cursor: pointer;
-            height: 100%;
-
+            height: 500px;            
             display: flex;
             flex-direction: column;
-            height: 100%;
+        }
+
+        .custom-card-top-wrap {
+            flex-shrink: 0; /* Prevent shrinking */
+            background: lightblue;
+            padding: 1rem;
+        }
+
+        .custom-card-bot-wrap {
+            flex-shrink: 0; /* Prevent shrinking */
+            background: lightcoral;
+            padding: 1rem;
+            margin-top: auto; /* Push to bottom */
         }
         .custom-card:hover {
             border-color: #0d6efd;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }
+        
         .price {
             color: #0d6efd;
             font-weight: 700;
@@ -51,17 +62,21 @@
         <div class="row g-4 mb-4">
             <div class="col-md-4 h-100"> <!-- Added h-100 to column -->
                 <div class="custom-card p-3">
-                    <h3>STANDARD</h3>
-                    <p><b><i>Core Tax Service</i></b></p>
-                    <h6 class="price">$150</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
-                        <div class="col-6">
-                            <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
-                        </div>
-                        <div class="col-6">
-                            <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
-                        </div>
+                    <div class="custom-card-top-wrap">
+                        <h3>STANDARD</h3>
+                        <p><b><i>Core Tax Service</i></b></p>
+                        <h6 class="price">$150</h6>
+                    </div>  
+                    <div class="custom-card-bot-wrap">
+                        <div class="row mt-3 g-2">
+                            <div class="col-6">
+                                    <button id='pkgStandardMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
+                                </div>
+                                <div class="col-6">
+                                    <button id='pkgStandardPartBut' class="pkgPartBut btn btn-outline-primary w-100">Partner</button>
+                                </div>
+                            </div>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -138,8 +153,7 @@
                     <h3>HOME DAY CARE</h3>
                     <p><b><i>Core Tax Service</i></b><sup>*</sup> for day care providers. Includes 1 Business Add-On</p>
                     <h6 class="price">$185</h6>
-                    <div class="mb-3"></div>
-                    <div class="mt-auto">   
+                    <div class="row mt-3 g-2">
                         <div class="col-6">
                             <button id='pkgDaycareMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
                         </div>
@@ -159,7 +173,7 @@
                     <p><b><i>Core Tax Service</i></b><sup>*</sup> for full-time students</p>
                     <h6 class="price">$85</h6>
                     <div class="mb-3"></div>
-                    <div class="mt-auto">   
+                    <div class="row mt-3 g-2">
                         <div class="col-6">
                             <button id='pkgStudentMeBut' class="pkgMeBut btn btn-outline-primary w-100">For Me</button>
                         </div>
