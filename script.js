@@ -88,7 +88,7 @@ const fillPkgGrid = function () {
       //   } else {
       //     html += "<div class='custom-card col-md-4 p-3'>";
       //   }
-      html += "<div class='card custom-card col-md-4'>";
+      html += "<div class='card custom-card col-md-3'>";
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];
