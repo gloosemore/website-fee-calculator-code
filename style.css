@@ -18,9 +18,14 @@
     height: 275px;            
     display: flex;
     flex-direction: column;
-    margin-right: 5px;
-    margin-left: 5px;
+    width: 31.333%;
 }
+.custom-card-middle {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
 .custom-card-top-wrap {
     flex-shrink: 0; /* Prevent shrinking */
     padding: 1rem;
