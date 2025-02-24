@@ -328,11 +328,15 @@ const updatePrices = function () {
 
 const updateAddOnsCount = function () {
   $("#add-on-me-bus-count").html(
-    "For Me: " + (meBusAddOns + meBusAddOnsDiscount)
+    "For Me:&nbsp;&nbsp;<b>" + (meBusAddOns + meBusAddOnsDiscount) + "</b>"
   );
   $("#add-on-part-bus-count").html(
-    "Partner:" + (partBusAddOns + partBusAddOnsDiscount)
+    "Partner:&nbsp;&nbsp;<b>" + (partBusAddOns + partBusAddOnsDiscount + "</b>")
   );
-  $("#add-on-me-rent-count").html("For Me: " + meRentAddOns);
-  $("#add-on-part-rent-count").html("Partner: " + partRentAddOns);
+  $("#add-on-me-rent-count").html(
+    "For Me:&nbsp;&nbsp;<b>" + meRentAddOns + "</b>"
+  );
+  $("#add-on-part-rent-count").html(
+    "Partner:&nbsp;&nbsp;<b>" + partRentAddOns + "</b>"
+  );
 };

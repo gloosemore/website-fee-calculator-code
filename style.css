@@ -149,6 +149,9 @@
     width: 60px;
     height: 60px;
     font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn-style-plus-minus:hover {
     color: white;
@@ -158,3 +161,6 @@
     height: 60px;
 }
 
+.white-text {
+    color: white;
+}
