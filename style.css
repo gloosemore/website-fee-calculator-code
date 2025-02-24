@@ -108,6 +108,8 @@
 #summary-container {
     display: flex;
     flex-direction: row;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .summary-column {
     display: flex;
@@ -152,7 +154,7 @@
     align-items: center; */
 
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
     /* padding: 0px; */
 }
 .btn-style-plus-minus:hover {
