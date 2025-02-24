@@ -6,6 +6,11 @@
     text-align: center;
 }
 
+.container {
+    max-width: 20000px;
+    margin: 0px;
+}
+
 .custom-card {
     border: 1px solid #dee2e6;
     border-radius: 8px;
