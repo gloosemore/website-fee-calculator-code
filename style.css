@@ -18,7 +18,7 @@
     height: 275px;            
     display: flex;
     flex-direction: column;
-    width: 31.333%;
+    /* width: 31.333%; */
 }
 .custom-card-middle {
     margin-left: 3%;
