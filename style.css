@@ -170,7 +170,8 @@
 table tr {
     border: 1px solid white;
 }
-table tr {
+table th {
+    text-align: center;
     padding: 20px;
 }
 table td {
