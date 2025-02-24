@@ -321,9 +321,9 @@ const updatePrices = function () {
   const hst = subtotal * 0.13;
   const total = subtotal + hst;
 
-  $("#price-subtotal").html("$" + subtotal.toFixed(2));
-  $("#price-hst").html("$" + hst.toFixed(2));
-  $("#price-total").html("$" + total.toFixed(2));
+  $("#price-subtotal").html("<b>$" + subtotal.toFixed(2) + "</b>");
+  $("#price-hst").html("<b>$" + hst.toFixed(2) + "</b>");
+  $("#price-total").html("<b>$" + total.toFixed(2) + "</b>");
 };
 
 const updateAddOnsCount = function () {
