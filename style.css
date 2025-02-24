@@ -83,7 +83,6 @@
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
-    padding: 1rem;
 }
 .add-on-right-wrap {
     display: flex;
@@ -103,6 +102,8 @@
     display: flex;
     flex-direction: row;
     background-color: brown;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 .summary-column {
     display: flex;
@@ -129,6 +130,6 @@
 .btn-style-plus-minus {
     border-color: #0d6efd;
     color: #0d6efd;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
