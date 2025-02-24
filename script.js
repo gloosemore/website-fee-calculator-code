@@ -22,102 +22,8 @@ var partRentAddOns = 0;
 $(document).ready(function () {
   fillPkgGrid();
 
-  // Handle "For Me" button clicks
-  $(".pkg-me-but").click(function () {
-    const buttonId = $(this).attr("id");
-    console.log("buttonId=", buttonId);
-    mePkgType = buttonId
-      .substring(11, 30)
-      .replaceAll(" ", "_")
-      .replaceAll("-", "_");
-    console.log("mePkgType=", mePkgType);
-
-    meBusAddOnsDiscount = 0;
-    switch (mePkgType) {
-      case "GIG_ECONOMY":
-        meBusAddOnsDiscount = 2;
-        break;
-      case "HOME_DAY_CARE":
-        meBusAddOnsDiscount = 1;
-        break;
-    }
-
-    $(".pkg-me-but")
-      .removeClass("btn-style-success")
-      .addClass("btn-style-primary");
-    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
-
-    updateAddOnsCount();
-    updatePrices();
-  });
-
-  // Handle "Partner" button clicks
-  $(".pkg-part-but").click(function () {
-    const buttonId = $(this).attr("id");
-    console.log("buttonId=", buttonId);
-    console.log("13=", buttonId.substring(13, 30));
-    partPkgType = buttonId
-      .substring(13, 30)
-      .replaceAll(" ", "_")
-      .replaceAll("-", "_");
-    console.log("partPkgType=", partPkgType);
-
-    partBusAddOnsDiscount = 0;
-    switch (partPkgType) {
-      case "GIG_ECONOMY":
-        partBusAddOnsDiscount = 2;
-        break;
-      case "HOME_DAY_CARE":
-        partBusAddOnsDiscount = 1;
-        break;
-    }
-
-    $(".pkg-part-but")
-      .removeClass("btn-style-success")
-      .addClass("btn-style-primary");
-    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
-
-    updateAddOnsCount();
-    updatePrices();
-  });
-
-  $(".add-on-but").click(function () {
-    const cls = $(this).attr("class");
-    console.log("cls=", cls);
-
-    if (cls.includes("part")) {
-      if (cls.includes("rent")) {
-        if (cls.includes("increm")) {
-          if (partRentAddOns < 10) partRentAddOns += 1;
-        } else {
-          if (partRentAddOns > 0) partRentAddOns -= 1;
-        }
-      } else {
-        if (cls.includes("increm")) {
-          if (partBusAddOns < 10) partBusAddOns += 1;
-        } else {
-          if (partBusAddOns > 0) partBusAddOns -= 1;
-        }
-      }
-    } else {
-      if (cls.includes("rent")) {
-        if (cls.includes("increm")) {
-          if (meRentAddOns < 10) meRentAddOns += 1;
-        } else {
-          if (meRentAddOns > 0) meRentAddOns -= 1;
-        }
-      } else {
-        if (cls.includes("increm")) {
-          if (meBusAddOns < 10) meBusAddOns += 1;
-        } else {
-          if (meBusAddOns > 0) meBusAddOns -= 1;
-        }
-      }
-    }
-
-    updateAddOnsCount();
-    updatePrices();
-  });
+  pkgChangeHandlers();
+  addOnHandler();
 
   updateAddOnsCount();
   updatePrices();
@@ -187,16 +93,28 @@ const fillPkgGrid = function () {
       html += "<div class='custom-card-bot-wrap'>";
       html += "<div class='row g-2'>";
       html += "<div class='col-6'>";
+      var useMeStyle = "btn-style-primary";
+      if (currPkg["name"] == mePkgType) {
+        useMeStyle = "btn-style-success";
+      }
       html +=
         "<button id='pkg-me-but-" +
         currPkg["name"] +
-        "' class='pkg-me-but btn btn-style-primary w-100'>For Me</button>";
+        "' class='pkg-me-but btn " +
+        useMeStyle +
+        " w-100'>For Me</button>";
       html += "</div>";
       html += "<div class='col-6'>";
+      var usePartStyle = "btn-style-primary";
+      if (currPkg["name"] == partPkgType) {
+        usePartStyle = "btn-style-success";
+      }
       html +=
         "<button id='pkg-part-but-" +
         currPkg["name"] +
-        "' class='pkg-part-but btn btn-style-primary w-100'>Partner</button>";
+        "' class='pkg-part-but btn " +
+        usePartStyle +
+        " w-100'>Partner</button>";
       html += "</div>";
       html += "</div>";
       html += "</div>";
@@ -209,6 +127,106 @@ const fillPkgGrid = function () {
 
   html += "</div>";
   $("#pkg-container").html(html);
+};
+
+const pkgChangeHandlers = function () {
+  $(".pkg-me-but").click(function () {
+    const buttonId = $(this).attr("id");
+    console.log("buttonId=", buttonId);
+    mePkgType = buttonId
+      .substring(11, 30)
+      .replaceAll(" ", "_")
+      .replaceAll("-", "_");
+    console.log("mePkgType=", mePkgType);
+
+    meBusAddOnsDiscount = 0;
+    switch (mePkgType) {
+      case "GIG_ECONOMY":
+        meBusAddOnsDiscount = 2;
+        break;
+      case "HOME_DAY_CARE":
+        meBusAddOnsDiscount = 1;
+        break;
+    }
+
+    $(".pkg-me-but")
+      .removeClass("btn-style-success")
+      .addClass("btn-style-primary");
+    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+
+    updateAddOnsCount();
+    updatePrices();
+  });
+
+  // Handle "Partner" button clicks
+  $(".pkg-part-but").click(function () {
+    const buttonId = $(this).attr("id");
+    console.log("buttonId=", buttonId);
+    console.log("13=", buttonId.substring(13, 30));
+    partPkgType = buttonId
+      .substring(13, 30)
+      .replaceAll(" ", "_")
+      .replaceAll("-", "_");
+    console.log("partPkgType=", partPkgType);
+
+    partBusAddOnsDiscount = 0;
+    switch (partPkgType) {
+      case "GIG_ECONOMY":
+        partBusAddOnsDiscount = 2;
+        break;
+      case "HOME_DAY_CARE":
+        partBusAddOnsDiscount = 1;
+        break;
+    }
+
+    $(".pkg-part-but")
+      .removeClass("btn-style-success")
+      .addClass("btn-style-primary");
+    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+
+    updateAddOnsCount();
+    updatePrices();
+  });
+};
+
+const addOnHandler = function () {
+  $(".add-on-but").click(function () {
+    const cls = $(this).attr("class");
+    console.log("cls=", cls);
+
+    if (cls.includes("part")) {
+      if (cls.includes("rent")) {
+        if (cls.includes("increm")) {
+          if (partRentAddOns < 10) partRentAddOns += 1;
+        } else {
+          if (partRentAddOns > 0) partRentAddOns -= 1;
+        }
+      } else {
+        if (cls.includes("increm")) {
+          if (partBusAddOns < 10) partBusAddOns += 1;
+        } else {
+          if (partBusAddOns > 0) partBusAddOns -= 1;
+        }
+      }
+    } else {
+      if (cls.includes("rent")) {
+        if (cls.includes("increm")) {
+          if (meRentAddOns < 10) meRentAddOns += 1;
+        } else {
+          if (meRentAddOns > 0) meRentAddOns -= 1;
+        }
+      } else {
+        if (cls.includes("increm")) {
+          if (meBusAddOns < 10) meBusAddOns += 1;
+        } else {
+          if (meBusAddOns > 0) meBusAddOns -= 1;
+        }
+      }
+    }
+
+    updateAddOnsCount();
+    updatePrices();
+  });
 };
 
 const updatePrices = function () {
@@ -306,8 +324,12 @@ const updatePrices = function () {
 };
 
 const updateAddOnsCount = function () {
-  $("#add-on-me-bus-count").html(meBusAddOns + meBusAddOnsDiscount);
-  $("#add-on-part-bus-count").html(partBusAddOns + partBusAddOnsDiscount);
-  $("#add-on-me-rent-count").html(meRentAddOns);
-  $("#add-on-part-rent-count").html(partRentAddOns);
+  $("#add-on-me-bus-count").html(
+    "For Me: " + (meBusAddOns + meBusAddOnsDiscount)
+  );
+  $("#add-on-part-bus-count").html(
+    "Partner:" + (partBusAddOns + partBusAddOnsDiscount)
+  );
+  $("#add-on-me-rent-count").html("For Me: " + meRentAddOns);
+  $("#add-on-part-rent-count").html("Partner: " + partRentAddOns);
 };
