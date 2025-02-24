@@ -85,8 +85,8 @@ $(document).ready(function () {
 
   $(".add-on-but").click(function () {
     const cls = $(this).attr("class");
-
     console.log("cls=", cls);
+
     if (cls.includes("part")) {
       if (cls.includes("rent")) {
         if (cls.includes("increm")) {
@@ -117,7 +117,7 @@ $(document).ready(function () {
       }
     }
 
-    updatePrices();
+    // updatePrices();
   });
 
   updatePrices();
