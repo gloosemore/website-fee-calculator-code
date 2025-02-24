@@ -90,34 +90,34 @@ $(document).ready(function () {
     if (cls.includes("part")) {
       if (cls.includes("rent")) {
         if (cls.includes("increm")) {
-          partRentAddOns += 1;
+          if (partRentAddOns < 10) partRentAddOns += 1;
         } else {
-          partRentAddOns -= 1;
+          if (partRentAddOns > 0) partRentAddOns -= 1;
         }
       } else {
         if (cls.includes("increm")) {
-          partBusAddOns += 1;
+          if (partBusAddOns < 10) partBusAddOns += 1;
         } else {
-          partBusAddOns -= 1;
+          if (partBusAddOns > 0) partBusAddOns -= 1;
         }
       }
     } else {
       if (cls.includes("rent")) {
         if (cls.includes("increm")) {
-          meRentAddOns += 1;
+          if (meRentAddOns < 10) meRentAddOns += 1;
         } else {
-          meRentAddOns -= 1;
+          if (meRentAddOns > 0) meRentAddOns -= 1;
         }
       } else {
         if (cls.includes("increm")) {
-          meBusAddOns += 1;
+          if (meBusAddOns < 10) meBusAddOns += 1;
         } else {
-          meBusAddOns -= 1;
+          if (meBusAddOns > 0) meBusAddOns -= 1;
         }
       }
     }
 
-    // updatePrices();
+    updatePrices();
   });
 
   updatePrices();
