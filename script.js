@@ -296,15 +296,11 @@ const updatePrices = function () {
   );
   $("#price-total-rent").html("$" + priceTotalRentAddOns);
 
-  const subtotal = (
-    priceTotalCore +
-    priceTotalBusAddOns +
-    priceTotalRentAddOns
-  ).toFixed(2);
-  const hst = (subtotal * 0.13).toFixed(2);
+  const subtotal = priceTotalCore + priceTotalBusAddOns + priceTotalRentAddOns;
+  const hst = subtotal * 0.13;
   const total = subtotal + hst;
 
-  $("#price-subtotal").html(subtotal);
-  $("#price-hst").html(hst);
-  $("#price-total").html(total);
+  $("#price-subtotal").html(subtotal.toFixed(2));
+  $("#price-hst").html(hst.toFixed(2));
+  $("#price-total").html(total.toFixed(2));
 };
