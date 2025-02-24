@@ -18,6 +18,8 @@
     height: 275px;            
     display: flex;
     flex-direction: column;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .custom-card-top-wrap {
     flex-shrink: 0; /* Prevent shrinking */
