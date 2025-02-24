@@ -78,17 +78,16 @@ const fillPkgGrid = function () {
   for (var row = 1; row <= rowCount; row++) {
     if (currPkgNumb > pkgs.length) break;
 
-    html += "<div class='row g-3 overflow-hidden'>";
+    html += "<div class='row'>";
 
     for (var col = 1; col <= colCount; col++) {
       if (currPkgNumb > pkgs.length) break;
       const currPkg = pkgs[currPkgNumb - 1];
-      //   if (col == 2) {
-      //     html += "<div class='custom-card custom-card-middle col-md-4 p-3'>";
-      //   } else {
-      //     html += "<div class='custom-card col-md-4 p-3'>";
-      //   }
-      html += "<div class='card custom-card col-md-3'>";
+      if (col == 2) {
+        html += "<div class='custom-card custom-card-middle col-md-4 p-3'>";
+      } else {
+        html += "<div class='custom-card col-md-4 p-3'>";
+      }
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];

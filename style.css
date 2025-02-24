@@ -6,10 +6,10 @@
     text-align: center;
 }
 
-/* .container {
-    max-width: 20000px;
-    margin: 0px;
-} */
+.container {
+    max-width: 100%;
+    /* margin: 0px; */
+}
 
 .custom-card {
     border: 1px solid #dee2e6;
@@ -18,12 +18,13 @@
     height: 275px;            
     display: flex;
     flex-direction: column;
-    /* width: 31.333%; */
+    width: 32%;
+    margin-top: 2%;
 }
-/* .custom-card-middle {
-    margin-left: 3%;
-    margin-right: 3%;
-} */
+.custom-card-middle {
+    margin-left: 2%;
+    margin-right: 2%;
+}
 
 
 .custom-card-top-wrap {
