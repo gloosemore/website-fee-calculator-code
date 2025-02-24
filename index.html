@@ -21,73 +21,77 @@
         <div id="pkg-container" class="container"></div>
     </div>
 
-    <h4>2. Add-Ons</h4>
-    <p>Create an add-on for each <b><i>Business</i></b> or <b><i>Rental</i></b> property you own if it's not included in your package.</p>   
+    <div id="add-on-wrap">
+        <h4>2. Add-Ons</h4>
+        <p>Create an add-on for each <b><i>Business</i></b> or <b><i>Rental</i></b> property you own if it's not included in your package.</p>   
     
-    <div id="add-on-container" class="container">
-        <div class='add-on'>
-            <div class='add-on-left-wrap'>
-                <div>Business Add-On</div>
+        <div id="add-on-container" class="container">
+            <div class='add-on'>
+                <div class='add-on-left-wrap'>
+                    <div>Business Add-On</div>
+                </div>
+                <div class='add-on-right-wrap'>
+                    <div id='add-on-me-bus-count'>For Me: 0</div>
+                    <button id='add-on-me-bus-decrem-but' class='add-on-me-but add-on-bus-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
+                    <button id='add-on-me-bus-increm-but' class='add-on-me-but add-on-bus-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
+                    <div id='add-on-part-bus-count'>Partner: 0</div>
+                    <button id='add-on-part-bus-decrem-but' class='add-on-part-but add-on-bus-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
+                    <button id='add-on-part-bus-increm-but' class='add-on-part-but add-on-bus-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
+                </div>
             </div>
-            <div class='add-on-right-wrap'>
-                <div id='add-on-me-bus-count'>For Me: 0</div>
-                <button id='add-on-me-bus-decrem-but' class='add-on-me-but add-on-bus-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
-                <button id='add-on-me-bus-increm-but' class='add-on-me-but add-on-bus-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
-                <div id='add-on-part-bus-count'>Partner: 0</div>
-                <button id='add-on-part-bus-decrem-but' class='add-on-part-but add-on-bus-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
-                <button id='add-on-part-bus-increm-but' class='add-on-part-but add-on-bus-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
-            </div>
-        </div>
-        <div class='add-on'>
-            <div class='add-on-left-wrap'>
-                <div>Rental Add-On</div>
-            </div>
-            <div class='add-on-right-wrap'>
-                <div id='add-on-me-rent-count'>For Me: 0</div>
-                <button id='add-on-me-rent-decrem-but' class='add-on-me-but add-on-rent-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
-                <button id='add-on-me-rent-increm-but' class='add-on-me-but add-on-rent-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
-                <div id='add-on-part-rent-count'>Partner: 0</div>
-                <button id='add-on-part-rent-decrem-but' class='add-on-part-but add-on-rent-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
-                <button id='add-on-part-rent-increm-but' class='add-on-part-but add-on-rent-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
+            <div class='add-on'>
+                <div class='add-on-left-wrap'>
+                    <div>Rental Add-On</div>
+                </div>
+                <div class='add-on-right-wrap'>
+                    <div id='add-on-me-rent-count'>For Me: 0</div>
+                    <button id='add-on-me-rent-decrem-but' class='add-on-me-but add-on-rent-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
+                    <button id='add-on-me-rent-increm-but' class='add-on-me-but add-on-rent-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
+                    <div id='add-on-part-rent-count'>Partner: 0</div>
+                    <button id='add-on-part-rent-decrem-but' class='add-on-part-but add-on-rent-decrem-but add-on-but btn btn-style-plus-minus rounded-circle'>-</button>
+                    <button id='add-on-part-rent-increm-but' class='add-on-part-but add-on-rent-increm-but add-on-but btn btn-style-plus-minus rounded-circle'>+</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <h4>3. Estimated Price</h4>
-    <p>Based on your package and add-ons</p>   
+    <div id="summary-wrap">
+        <h4>3. Estimated Price</h4>
+        <p>Based on your package and add-ons</p>   
 
-    <div id="summary-container" class="container">
-        <div class='summary-column col-md-3'>
-            <div>Service</div>
-            <div>Core Tax</div>
-            <div>Business Tax</div>
-            <div>Rental Tax</div>
-        </div>
-        <div class='summary-column col-md-3'>
-            <div>For Me</div>
-            <div id="price-me-core">X</div>
-            <div id="price-me-bus">0</div>
-            <div id="price-me-rent">0</div>
-        </div>
-        <div class='summary-column col-md-3'>
-            <div>Partner</div>
-            <div id="price-part-core">X</div>
-            <div id="price-part-bus">0</div>
-            <div id="price-part-rent">0</div>
-            <div>Subtotal</div>
-            <div>HST</div>
-            <div>Total</div>
-        </div>
-        <div class='summary-column col-md-3'>
-            <div>Price</div>
-            <div id="price-total-core">100</div>
-            <div id="price-total-bus">200</div>
-            <div id="price-total-rent">300</div>
-            <div id="price-subtotal">600</div>
-            <div id="price-hst">85</div>
-            <div id="price-total">685</div>
-        </div>
-    </div>;
+        <div id="summary-container" class="container">
+            <div class='summary-column col-md-3'>
+                <div>Service</div>
+                <div>Core Tax</div>
+                <div>Business Tax</div>
+                <div>Rental Tax</div>
+            </div>
+            <div class='summary-column col-md-3'>
+                <div>For Me</div>
+                <div id="price-me-core">X</div>
+                <div id="price-me-bus">0</div>
+                <div id="price-me-rent">0</div>
+            </div>
+            <div class='summary-column col-md-3'>
+                <div>Partner</div>
+                <div id="price-part-core">X</div>
+                <div id="price-part-bus">0</div>
+                <div id="price-part-rent">0</div>
+                <div>Subtotal</div>
+                <div>HST</div>
+                <div>Total</div>
+            </div>
+            <div class='summary-column col-md-3'>
+                <div>Price</div>
+                <div id="price-total-core">100</div>
+                <div id="price-total-bus">200</div>
+                <div id="price-total-rent">300</div>
+                <div id="price-subtotal">600</div>
+                <div id="price-hst">85</div>
+                <div id="price-total">685</div>
+            </div>
+        </div>;
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
