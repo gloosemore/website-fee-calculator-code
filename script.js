@@ -78,7 +78,7 @@ const fillPkgGrid = function () {
   for (var row = 1; row <= rowCount; row++) {
     if (currPkgNumb > pkgs.length) break;
 
-    html += "<div class='row gx-5'>";
+    html += "<div class='row gx-2 overflow-hidden'>";
 
     for (var col = 1; col <= colCount; col++) {
       if (currPkgNumb > pkgs.length) break;
