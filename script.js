@@ -306,7 +306,7 @@ const updatePrices = function () {
 };
 
 const updateAddOnsCount = function () {
-  $("#add-on-me-bus-count").html(meBpartusAddOns + meBusAddOnsDiscount);
+  $("#add-on-me-bus-count").html(meBusAddOns + meBusAddOnsDiscount);
   $("#add-on-part-bus-count").html(partBusAddOns + partBusAddOnsDiscount);
   $("#add-on-me-rent-count").html(meRentAddOns);
   $("#add-on-part-rent-count").html(partRentAddOns);
