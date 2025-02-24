@@ -9,7 +9,7 @@ const priceAddOnBUSINESS = 50;
 const priceAddOnRENT = 50;
 
 var mePkgType = "STANDARD";
-var partPkgType = "STANDARD";
+var partPkgType = "";
 
 var meBusAddOns = 0;
 var meBusAddOnsDiscount = 0;
@@ -136,26 +136,39 @@ const pkgChangeHandlers = function () {
   $(".pkg-me-but").click(function () {
     const buttonId = $(this).attr("id");
     console.log("buttonId=", buttonId);
-    mePkgType = buttonId
+
+    const newPkgType = buttonId
       .substring(11, 30)
       .replaceAll(" ", "_")
       .replaceAll("-", "_");
-    console.log("mePkgType=", mePkgType);
+    console.log("newPkgType=", newPkgType);
 
+    // reset package, in case user just selected a package they already have,
+    // which effectively disconnects it.
     meBusAddOnsDiscount = 0;
-    switch (mePkgType) {
-      case "GIG_ECONOMY":
-        meBusAddOnsDiscount = 2;
-        break;
-      case "HOME_DAY_CARE":
-        meBusAddOnsDiscount = 1;
-        break;
-    }
 
     $(".pkg-me-but")
       .removeClass("btn-style-success")
       .addClass("btn-style-primary");
-    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+
+    if (newPkgType != mePkgType) {
+      // changed the package type
+      mePkgType = newPkgType;
+
+      switch (mePkgType) {
+        case "GIG_ECONOMY":
+          meBusAddOnsDiscount = 2;
+          break;
+        case "HOME_DAY_CARE":
+          meBusAddOnsDiscount = 1;
+          break;
+      }
+
+      $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+    } else {
+      // selected type already selected, deselect
+      mePkgType = "";
+    }
 
     updateAddOnsCount();
     updatePrices();
@@ -165,27 +178,39 @@ const pkgChangeHandlers = function () {
   $(".pkg-part-but").click(function () {
     const buttonId = $(this).attr("id");
     console.log("buttonId=", buttonId);
-    console.log("13=", buttonId.substring(13, 30));
-    partPkgType = buttonId
-      .substring(13, 30)
+
+    const newPkgType = buttonId
+      .substring(11, 30)
       .replaceAll(" ", "_")
       .replaceAll("-", "_");
-    console.log("partPkgType=", partPkgType);
+    console.log("newPkgType=", newPkgType);
 
+    // reset package, in case user just selected a package they already have,
+    // which effectively disconnects it.
     partBusAddOnsDiscount = 0;
-    switch (partPkgType) {
-      case "GIG_ECONOMY":
-        partBusAddOnsDiscount = 2;
-        break;
-      case "HOME_DAY_CARE":
-        partBusAddOnsDiscount = 1;
-        break;
-    }
 
     $(".pkg-part-but")
       .removeClass("btn-style-success")
       .addClass("btn-style-primary");
-    $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+
+    if (newPkgType != partPkgType) {
+      // changed the package type
+      partPkgType = newPkgType;
+
+      switch (partPkgType) {
+        case "GIG_ECONOMY":
+          partBusAddOnsDiscount = 2;
+          break;
+        case "HOME_DAY_CARE":
+          partBusAddOnsDiscount = 1;
+          break;
+      }
+
+      $(this).removeClass("btn-style-primary").addClass("btn-style-success");
+    } else {
+      // selected type already selected, deselect
+      partPkgType = "";
+    }
 
     updateAddOnsCount();
     updatePrices();
