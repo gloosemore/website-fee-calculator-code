@@ -8,8 +8,8 @@ const pricePkgFULL_TIME_STUDENTS = 85;
 const priceAddOnBUSINESS = 50;
 const priceAddOnRENT = 50;
 
-var mePkgType = "";
-var partPkgType = "";
+var mePkgType = "STANDARD";
+var partPkgType = "STANDARD";
 
 var meBusAddOns = 0;
 var meBusAddOnsDiscount = 0;
@@ -17,9 +17,7 @@ var partBusAddOns = 0;
 var partBusAddOnsDiscount = 0;
 
 var meRentAddOns = 0;
-var meRentAddOnsDiscount = 0;
 var partRentAddOns = 0;
-var partRentAddOnsDiscount = 0;
 
 $(document).ready(function () {
   fillPkgGrid();
@@ -35,7 +33,6 @@ $(document).ready(function () {
     console.log("mePkgType=", mePkgType);
 
     meBusAddOnsDiscount = 0;
-    meRentAddOnsDiscount = 0;
     switch (mePkgType) {
       case "GIG_ECONOMY":
         meBusAddOnsDiscount = 2;
@@ -50,6 +47,7 @@ $(document).ready(function () {
       .addClass("btn-style-primary");
     $(this).removeClass("btn-style-primary").addClass("btn-style-success");
 
+    updateAddOnsCount();
     updatePrices();
   });
 
@@ -65,7 +63,6 @@ $(document).ready(function () {
     console.log("partPkgType=", partPkgType);
 
     partBusAddOnsDiscount = 0;
-    partRentAddOnsDiscount = 0;
     switch (partPkgType) {
       case "GIG_ECONOMY":
         partBusAddOnsDiscount = 2;
@@ -80,6 +77,7 @@ $(document).ready(function () {
       .addClass("btn-style-primary");
     $(this).removeClass("btn-style-primary").addClass("btn-style-success");
 
+    updateAddOnsCount();
     updatePrices();
   });
 
@@ -117,9 +115,11 @@ $(document).ready(function () {
       }
     }
 
+    updateAddOnsCount();
     updatePrices();
   });
 
+  updateAddOnsCount();
   updatePrices();
 });
 
@@ -300,7 +300,14 @@ const updatePrices = function () {
   const hst = subtotal * 0.13;
   const total = subtotal + hst;
 
-  $("#price-subtotal").html(subtotal.toFixed(2));
-  $("#price-hst").html(hst.toFixed(2));
-  $("#price-total").html(total.toFixed(2));
+  $("#price-subtotal").html("$" + subtotal.toFixed(2));
+  $("#price-hst").html("$" + hst.toFixed(2));
+  $("#price-total").html("$" + total.toFixed(2));
+};
+
+const updateAddOnsCount = function () {
+  $("#add-on-me-bus-count").html(meBpartusAddOns + meBusAddOnsDiscount);
+  $("#add-on-part-bus-count").html(partBusAddOns + partBusAddOnsDiscount);
+  $("#add-on-me-rent-count").html(meRentAddOns);
+  $("#add-on-part-rent-count").html(partRentAddOns);
 };
