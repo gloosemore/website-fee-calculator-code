@@ -24,7 +24,7 @@
     padding: 15px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: green;
+    background-color: #dce3fc;
 }
 
 #summary-wrap {
@@ -136,16 +136,19 @@
     background-color: #0d6efd;
 }
 
-.btn-style-success {
+.btn-style-success, .btn-style-success:hover {
     color: white;
     border-color: #198754;
     background-color: #198754;
 }
+
+
 .btn-style-plus-minus {
     border-color: #0d6efd;
     color: #0d6efd;
     width: 60px;
     height: 60px;
+    font-size: 40px;
 }
 .btn-style-plus-minus:hover {
     color: white;
