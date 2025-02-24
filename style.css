@@ -9,6 +9,14 @@
     margin-bottom: 50px;
 }
 
+.section-title {
+    text-align: center;    
+}
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .container {
     max-width: 100%;
 }
@@ -147,8 +155,9 @@
     color: #0d6efd;
     width: 60px;
     height: 60px;
-    font-size: 40px;
-    line-height: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
     /* display: flex;
     justify-content: center;
     align-items: center; */
