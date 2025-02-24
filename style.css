@@ -1,26 +1,88 @@
 
 
+/* BOOTSTRAP */
+
+/* bootstrap creates max-widths to center things by default, i dont want this i want to control
+width using iFrame in Wix */
+.container {
+    max-width: 100%;
+}
+
+
+/* BASE STYLES */
+
+/* "Price Calculator */
 #title {
     text-align: center;
 }
 
+/* Intro to Price Calculator */
 #subtitle {
     text-align: center;
     margin-bottom: 50px;
 }
 
+/* Title for each of 3 sections */
 .section-title {
     text-align: center;    
 }
+
+/* brief description of how each section works */
 .section-subtitle {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.container {
-    max-width: 100%;
+/* slightly alter default button */
+.btn {
+    transition: all 0.2s ease;
+    border-width: 2px;
 }
 
+/* used in the package section but also possibly elsewhere, styles for 
+displaying buttons and toggling them on/off (primary->success) */
+.btn-style-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+.btn-style-primary:hover {
+    color: white;
+    border-color: #0d6efd;
+    background-color: #0d6efd;
+}
+.btn-style-success, .btn-style-success:hover {
+    color: white;
+    border-color: #198754;
+    background-color: #198754;
+}
+
+/* plus/minus buttons used in add-on area for increm/decrem addon counts */
+.btn-style-plus-minus {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+.btn-style-plus-minus:hover {
+    color: white;
+    border-color: #0d6efd;
+    background-color: #0d6efd;
+    width: 60px;
+    height: 60px;
+}
+
+/* make text white */
+.white-text {
+    color: white;
+}
+
+
+/* PACKAGE AREA */
+
+/* wrapper around first step (select package) */
 #package-wrap {
     padding: 15px;
     padding-top: 30px;
@@ -28,20 +90,7 @@
     background-color: #ededed;
 }
 
-#add-on-wrap {
-    padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #dce3fc;
-}
-
-#summary-wrap {
-    padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: blue;
-}
-
+/* each package is a "card", this will be annoying with responsive */
 .custom-card {
     background-color: white;
     border: 1px solid #dee2e6;
@@ -53,28 +102,50 @@
     width: 32%;
     margin-top: 0px;
 }
+
+/* had trouble with gutters in bootstrap layout, so give the middle card margins to 
+separate them */
 .custom-card-middle {
     margin-left: 2%;
     margin-right: 2%;
 }
 
+/* top part of each card contains the details */
 .custom-card-top-wrap {
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
     padding: 1rem;
 }
+
+/* bottom part of each card contains the buttons, top auto pushes to bottom */
 .custom-card-bot-wrap {
-    flex-shrink: 0; /* Prevent shrinking */
-    margin-top: auto; /* Push to bottom */
+    flex-shrink: 0;
+    margin-top: auto;
 }
+
+/* hovering a card highlights a border */
 .custom-card:hover {
     border-color: #0d6efd;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+
+/* ADD-ON AREA */
+
+/* wrapper around the add-on area */
+#add-on-wrap {
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #dce3fc;
+}
+
+/* contains each add-on in a column */
 #add-on-container {
     display: flex;
     flex-direction: column;
 }
+
+/* individual add-on, i.e. business or rental */
 .add-on {
     background-color: white;
     border: 1px solid #dee2e6;
@@ -85,20 +156,28 @@
     padding: 1rem;
 
 }
+
+/* hovering an add-on applies a border */
 .add-on:hover {
     border-color: #0d6efd;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
+
+/* left part of add-on contains the title of add-on */
 .add-on-left-wrap {
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
 }
+
+/* title of the addon inside left wrap */
 .add-on-title {
     display: flex;
     align-items: center;
     margin: 0px;
 }
+
+/* right part of add-on contains the buttons and counts */
 .add-on-right-wrap {
     display: flex;
     flex-direction: row;
@@ -106,6 +185,8 @@
     margin-left: auto;
     align-items: center; 
 }
+
+/* count of how much of the add-on is selected for each person */
 .add-on-count {
     display: flex;
     align-items: center;
@@ -113,75 +194,29 @@
     margin-left: 30px;
 }
 
+
+/* SUMMARY AREA */
+
+/* wrapper containing the summary */
+#summary-wrap {
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: blue;
+}
+
+/* container contains the table... */
 #summary-container {
     display: flex;
     flex-direction: row;
     padding-left: 0px;
     padding-right: 0px;
 }
-.summary-column {
-    display: flex;
-    flex-direction: column;
-    background-color: orange;
-}
 
-.price {
-    color: #0d6efd;
-    font-weight: 700;
-}
-.btn {
-    transition: all 0.2s ease;
-    border-width: 2px;
-}
-.btn-style-primary {
-    border-color: #0d6efd;
-    color: #0d6efd;
-}
-.btn-style-primary:hover {
-    color: white;
-    border-color: #0d6efd;
-    background-color: #0d6efd;
-}
-
-.btn-style-success, .btn-style-success:hover {
-    color: white;
-    border-color: #198754;
-    background-color: #198754;
-}
-
-
-.btn-style-plus-minus {
-    border-color: #0d6efd;
-    color: #0d6efd;
-    width: 60px;
-    height: 60px;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 30px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
-    text-align: center;
-    vertical-align: middle;
-    /* padding: 0px; */
-}
-.btn-style-plus-minus:hover {
-    color: white;
-    border-color: #0d6efd;
-    background-color: #0d6efd;
-    width: 60px;
-    height: 60px;
-}
-
-.white-text {
-    color: white;
-}
-
+/* table containing the summary data */
 table {
     margin: auto;
 }
-
 table tr {
     border: 1px solid white;
 }

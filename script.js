@@ -1,10 +1,10 @@
 const pricePkgSTANDARD = 150;
 const pricePkgEMPLOYEE_ONLY = 115;
-const pricePkgDISABLED = 120;
-const pricePkgSENIORS = 130;
+const pricePkgDISABLED = 125;
+const pricePkgSENIORS = 135;
 const pricePkgGIG_ECONOMY = 175;
 const pricePkgHOME_DAY_CARE = 185;
-const pricePkgFULL_TIME_STUDENTS = 85;
+const pricePkgFULL_TIME_STUDENTS = 90;
 const priceAddOnBUSINESS = 50;
 const priceAddOnRENT = 50;
 
@@ -180,7 +180,7 @@ const pkgChangeHandlers = function () {
     console.log("buttonId=", buttonId);
 
     const newPkgType = buttonId
-      .substring(11, 30)
+      .substring(13, 30)
       .replaceAll(" ", "_")
       .replaceAll("-", "_");
     console.log("newPkgType=", newPkgType);
