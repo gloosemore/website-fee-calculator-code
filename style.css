@@ -82,8 +82,8 @@ displaying buttons and toggling them on/off (primary->success) */
 .btn-style-plus-minus {
     border-color: #0d6efd;
     color: #0d6efd;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
@@ -118,21 +118,9 @@ displaying buttons and toggling them on/off (primary->success) */
     min-height: 220px;            
     display: flex;
     flex-direction: column;
-    /* width: 49%; */
-    /* margin-left: 5px;
-    margin-right: 5px; */
     margin-top: 0px;
     margin-bottom: 10px;
 }
-
-/* had trouble with gutters in bootstrap layout */
-.custom-card-left {
-    /* margin-right: 1%; */
-}
-.custom-card-right {
-    /* margin-left: 1%; */
-}
-
 
 /* top part of each card contains the details */
 .custom-card-top-wrap {
