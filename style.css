@@ -207,6 +207,7 @@ displaying buttons and toggling them on/off (primary->success) */
     align-items: center;
     vertical-align: middle;
     margin-bottom: 0px;
+    text-wrap: nowrap;
     /* margin-right: 20px;
     margin-left: 30px; */
 }
