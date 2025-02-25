@@ -147,9 +147,6 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* wrapper around the add-on area */
 #add-on-wrap {
-    padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: #dce3fc;
 }
 
