@@ -197,8 +197,6 @@ displaying buttons and toggling them on/off (primary->success) */
     flex-direction: row;
     flex-shrink: 0;
     align-items: center;
-    /* justify-content: end;  */
-    /* margin-left: auto; */
 }
 
 /* count of how much of the add-on is selected for each person */
@@ -208,8 +206,6 @@ displaying buttons and toggling them on/off (primary->success) */
     vertical-align: middle;
     margin-bottom: 0px;
     text-wrap: nowrap;
-    /* margin-right: 20px;
-    margin-left: 30px; */
 }
 /* if a count is > 0, change the color */
 .add-on-count-positive {
