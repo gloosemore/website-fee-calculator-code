@@ -173,6 +173,7 @@ displaying buttons and toggling them on/off (primary->success) */
     flex-direction: row;
     flex-shrink: 0;
     margin: 0px;
+    padding: 0px;
 }
 
 /* title of the addon inside left wrap */
