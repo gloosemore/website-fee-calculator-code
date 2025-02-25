@@ -362,16 +362,41 @@ const updatePrices = function () {
 };
 
 const updateAddOnsCount = function () {
+  const meBusCount = meBusAddOns + meBusAddOnsDiscount;
+  const partBusCount = partBusAddOns + partBusAddOnsDiscount;
+  const meRentCount = meRentAddOns;
+  const partRentCount = partRentAddOns;
+
   $("#add-on-me-bus-count").html(
-    "For Me:&nbsp;&nbsp;<b>" + (meBusAddOns + meBusAddOnsDiscount) + "</b>"
+    "For Me:&nbsp;&nbsp;<b>" + meBusCount + "</b>"
   );
+  if (meBusCount) {
+    $("#add-on-me-bus-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-me-bus-count").removeClass("add-on-count-positive");
+  }
   $("#add-on-part-bus-count").html(
-    "Partner:&nbsp;&nbsp;<b>" + (partBusAddOns + partBusAddOnsDiscount + "</b>")
+    "Partner:&nbsp;&nbsp;<b>" + (partBusCount + "</b>")
   );
+  if (partBusCount) {
+    $("#add-on-part-bus-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-part-bus-count").removeClass("add-on-count-positive");
+  }
   $("#add-on-me-rent-count").html(
-    "For Me:&nbsp;&nbsp;<b>" + meRentAddOns + "</b>"
+    "For Me:&nbsp;&nbsp;<b>" + meRentCount + "</b>"
   );
+  if (meRentCount) {
+    $("#add-on-me-rent-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-me-rent-count").removeClass("add-on-count-positive");
+  }
   $("#add-on-part-rent-count").html(
-    "Partner:&nbsp;&nbsp;<b>" + partRentAddOns + "</b>"
+    "Partner:&nbsp;&nbsp;<b>" + partRentCount + "</b>"
   );
+  if (partRentCount) {
+    $("#add-on-part-rent-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-part-rent-count").removeClass("add-on-count-positive");
+  }
 };

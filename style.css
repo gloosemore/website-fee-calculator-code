@@ -207,7 +207,10 @@ displaying buttons and toggling them on/off (primary->success) */
     margin-right: 20px;
     margin-left: 30px;
 }
-
+/* if a count is > 0, change the color */
+.add-on-count-positive {
+    color: #198754
+}
 
 /* SUMMARY AREA */
 
