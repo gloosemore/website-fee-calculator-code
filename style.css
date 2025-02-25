@@ -159,7 +159,6 @@ displaying buttons and toggling them on/off (primary->success) */
     display: flex;
     flex-direction: row;
     padding: 1rem;
-
 }
 
 /* hovering an add-on applies a border */
