@@ -106,6 +106,10 @@ displaying buttons and toggling them on/off (primary->success) */
     background-color: #ededed;
 }
 
+#package-container {
+    padding: 0px;
+}
+
 /* each package is a "card", this will be annoying with responsive */
 .custom-card {
     background-color: white;
