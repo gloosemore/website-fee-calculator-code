@@ -208,6 +208,7 @@ displaying buttons and toggling them on/off (primary->success) */
     vertical-align: middle;
     margin-bottom: 0px;
     text-wrap: nowrap;
+    width: 125px;
 }
 /* if a count is > 0, change the color */
 .add-on-count-positive {
