@@ -89,14 +89,16 @@ const fillPkgGrid = function () {
       //   html += "<div class='custom-card col-md-6 p-3'>";
       // }
       if (col == 1) {
-        html += "<div class='custom-card custom-card-left col-md-6 p-3'>";
+        html +=
+          "<div class='custom-card custom-card-left col-sm-12 col-md-6 p-3'>";
       } else {
-        html += "<div class='custom-card custom-card-right col-md-6 p-3'>";
+        html +=
+          "<div class='custom-card custom-card-right col-sm-12 col-md-6 p-3'>";
       }
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];
-      html += "<h6 class='price'>" + currPkg["price"] + "</h6>";
+      html += "<h6 class='custom-card-price'>" + currPkg["price"] + "</h6>";
       html += "</div>";
       html += "<div class='custom-card-bot-wrap'>";
       html += "<div class='row g-2'>";
