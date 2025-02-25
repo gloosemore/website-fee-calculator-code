@@ -90,10 +90,10 @@ const fillPkgGrid = function () {
       // }
       if (col == 1) {
         html +=
-          "<div class='custom-card custom-card-left mr-3 col-12 col-md-6 p-3'>";
+          "<div class='custom-card custom-card-left me-3 col-12 col-md-6 p-3'>";
       } else {
         html +=
-          "<div class='custom-card custom-card-right ml-3 col-12 col-md-6 p-3'>";
+          "<div class='custom-card custom-card-right ms-3 col-12 col-md-6 p-3'>";
       }
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
