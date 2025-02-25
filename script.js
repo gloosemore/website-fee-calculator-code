@@ -88,7 +88,7 @@ const fillPkgGrid = function () {
       // } else {
       //   html += "<div class='custom-card col-md-6 p-3'>";
       // }
-      html += "<div class='col-12 col-md-6'>";
+      html += "<div class='col-12 col-md-6 mt-0'>";
       // if (col == 1) {
       //   html +=
       //     "<div class='custom-card custom-card-left col-12 col-md-6 p-3'>";
@@ -96,7 +96,7 @@ const fillPkgGrid = function () {
       //   html +=
       //     "<div class='custom-card custom-card-right col-12 col-md-6 p-3'>";
       // }
-      html += "<div class='custom-card'>";
+      html += "<div class='custom-card p-3'>";
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];

@@ -137,7 +137,6 @@ displaying buttons and toggling them on/off (primary->success) */
 /* top part of each card contains the details */
 .custom-card-top-wrap {
     flex-shrink: 0;
-    padding: 1rem;
 }
 
 /* price tag for each card */
