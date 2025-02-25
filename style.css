@@ -120,6 +120,9 @@ displaying buttons and toggling them on/off (primary->success) */
     flex-direction: column;
     /* width: 49%; */
     margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 /* had trouble with gutters in bootstrap layout */
