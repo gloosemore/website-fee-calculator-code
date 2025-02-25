@@ -154,6 +154,10 @@ displaying buttons and toggling them on/off (primary->success) */
     background-color: #dce3fc;
 }
 
+#add-on-container {
+    padding: 0px;
+}
+
 /* individual add-on, i.e. business or rental */
 .add-on {
     background-color: white;
