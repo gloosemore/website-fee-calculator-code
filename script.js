@@ -78,7 +78,7 @@ const fillPkgGrid = function () {
   for (var row = 1; row <= rowCount; row++) {
     if (currPkgNumb > pkgs.length) break;
 
-    html += "<div class='row mt-0 mb-0'>";
+    html += "<div class='row mt-0 mb-0 g-3'>";
 
     for (var col = 1; col <= colCount; col++) {
       if (currPkgNumb > pkgs.length) break;
@@ -88,13 +88,15 @@ const fillPkgGrid = function () {
       // } else {
       //   html += "<div class='custom-card col-md-6 p-3'>";
       // }
-      if (col == 1) {
-        html +=
-          "<div class='custom-card custom-card-left me-3 col-12 col-md-6 p-3'>";
-      } else {
-        html +=
-          "<div class='custom-card custom-card-right ms-3 col-12 col-md-6 p-3'>";
-      }
+      html += "<div class='col-12 col-md-6'>";
+      // if (col == 1) {
+      //   html +=
+      //     "<div class='custom-card custom-card-left col-12 col-md-6 p-3'>";
+      // } else {
+      //   html +=
+      //     "<div class='custom-card custom-card-right col-12 col-md-6 p-3'>";
+      // }
+      html += "<div class='custom-card'>";
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];
@@ -125,6 +127,7 @@ const fillPkgGrid = function () {
         "' class='pkg-part-but btn " +
         usePartStyle +
         " w-100'>Partner</button>";
+      html += "</div>";
       html += "</div>";
       html += "</div>";
       html += "</div>";
