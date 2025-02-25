@@ -13,12 +13,12 @@ width using iFrame in Wix */
 
 /* "Price Calculator */
 #title {
-    text-align: center;
+    text-align: left;
 }
 
 /* Intro to Price Calculator */
 #subtitle {
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px;
 }
 
@@ -44,12 +44,14 @@ width using iFrame in Wix */
 
 /* left part of each section contains the info describing the section */
 .section-left-info {
-/*  */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* on the right are the options or details of each section */
 .section-right-details {
     display: flex;
+    flex-direction: column;
 }
 
 
