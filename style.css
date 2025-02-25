@@ -150,12 +150,6 @@ displaying buttons and toggling them on/off (primary->success) */
     background-color: #dce3fc;
 }
 
-/* contains each add-on in a column */
-#add-on-container {
-    display: flex;
-    flex-direction: column;
-}
-
 /* individual add-on, i.e. business or rental */
 .add-on {
     background-color: white;
