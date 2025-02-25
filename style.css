@@ -13,12 +13,12 @@ width using iFrame in Wix */
 
 /* "Price Calculator */
 #title {
-    text-align: left;
+    text-align: center;
 }
 
 /* Intro to Price Calculator */
 #subtitle {
-    text-align: left;
+    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -33,12 +33,12 @@ width using iFrame in Wix */
 
 /* Title for each of 3 sections */
 .section-title {
-    text-align: center;    
+    text-align: left;    
 }
 
 /* brief description of how each section works */
 .section-subtitle {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -115,19 +115,21 @@ displaying buttons and toggling them on/off (primary->success) */
     border: 1px solid #dee2e6;
     border-radius: 8px;
     transition: all 0.3s ease;
-    height: 240px;            
+    min-height: 220px;            
     display: flex;
     flex-direction: column;
-    width: 32%;
+    width: 48%;
     margin-top: 0px;
 }
 
-/* had trouble with gutters in bootstrap layout, so give the middle card margins to 
-separate them */
-.custom-card-middle {
-    margin-left: 2%;
+/* had trouble with gutters in bootstrap layout */
+.custom-card-left {
     margin-right: 2%;
 }
+.custom-card-right {
+    margin-left: 2%;
+}
+
 
 /* top part of each card contains the details */
 .custom-card-top-wrap {
