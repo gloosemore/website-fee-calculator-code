@@ -22,6 +22,15 @@ width using iFrame in Wix */
     margin-bottom: 50px;
 }
 
+/* calculator is devided into sections (i.e. 3) */
+.section {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 /* Title for each of 3 sections */
 .section-title {
     text-align: center;    
@@ -32,6 +41,17 @@ width using iFrame in Wix */
     text-align: center;
     margin-bottom: 20px;
 }
+
+/* left part of each section contains the info describing the section */
+.section-left-info {
+    width: 300px;
+}
+
+/* on the right are the options or details of each section */
+.section-right-details {
+    display: flex;
+}
+
 
 /* slightly alter default button */
 .btn {
@@ -84,9 +104,6 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* wrapper around first step (select package) */
 #package-wrap {
-    padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: #ededed;
 }
 
