@@ -38,8 +38,8 @@ p {
     display: flex;
     flex-direction: row;
     padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* Title for each of 3 sections */
