@@ -11,6 +11,10 @@ width using iFrame in Wix */
 
 /* BASE STYLES */
 
+p {
+    font-size: 18px;
+}
+
 .hidden {
     display: none;
 }
