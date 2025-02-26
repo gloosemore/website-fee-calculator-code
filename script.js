@@ -457,5 +457,5 @@ const updatePrices = function () {
 
   $("#sum-subtotal-amount").html("$" + subtotal.toFixed(2));
   $("#sum-hst-amount").html("$" + hst.toFixed(2));
-  $("#sum-total-amount").html("<$" + total.toFixed(2));
+  $("#sum-total-amount").html("$" + total.toFixed(2));
 };
