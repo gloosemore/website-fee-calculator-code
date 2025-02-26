@@ -246,18 +246,15 @@ displaying buttons and toggling them on/off (primary->success) */
 table {
     margin: 0px;
 }
-table tr {
+table tr, table th, table td {
     border: 1px solid white;
 }
-table th {
-    text-align: center;
+table tr.title-row th, table tr.total-row td {
     padding: 10px;
-}
-table td {
-    padding: 10px;
-}
-.table-cell-inverted {
     background-color: white;
     color: #0d6efd;
-    padding: 20px !important;
+} 
+table tr.content-row td {
+    padding: 10px;
 }
+
