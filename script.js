@@ -394,7 +394,8 @@ const updatePrices = function () {
   console.log("pricePartCore=", pricePartCore);
   console.log("priceTotalCore=", priceTotalCore);
 
-  var coreCount = 1;
+  var coreCount = 0;
+  if (priceMeCore != 0) coreCount += 1;
   if (pricePartCore != 0) coreCount += 1;
 
   $("#sum-core-tax-label").html(
