@@ -232,7 +232,7 @@ displaying buttons and toggling them on/off (primary->success) */
     padding: 15px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: blue;
+    background-color: #0d6efd;
 }
 
 /* container contains the table... */
@@ -253,4 +253,8 @@ table th {
 }
 table td {
     padding: 20px;
+}
+.table-cell-inverted {
+    background-color: white;
+    color: #0d6efd;
 }
