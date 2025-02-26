@@ -244,7 +244,7 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* table containing the summary data */
 table {
-    margin: auto;
+    margin: 0px;
 }
 table tr {
     border: 1px solid white;
@@ -259,4 +259,7 @@ table td {
 .table-cell-inverted {
     background-color: white;
     color: #0d6efd;
+}
+.total-row {
+    max-height: 40px;
 }
