@@ -237,7 +237,9 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* container contains the table... */
 #summary-container {
-
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 /* table containing the summary data */
