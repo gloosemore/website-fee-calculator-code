@@ -63,7 +63,7 @@ const fillPkgGrid = function () {
     },
     {
       name: "GIG ECONOMY",
-      desc: "<p><b><i>Core Tax Service</i></b> for gig workers. Also includes <b><i>2 Business</i></b> Add-Ons</p>",
+      desc: "<p><b><i>Core Tax Service</i></b> for gig workers. Also includes <b><i>1 Business</i></b> Add-On</p>",
       price: "$" + pricePkgGIG_ECONOMY,
     },
     {
@@ -203,7 +203,7 @@ const pkgChangeHandlers = function () {
 
       switch (partPkgType) {
         case "GIG_ECONOMY":
-          partBusAddOnsDiscount = 2;
+          partBusAddOnsDiscount = 1;
           break;
         case "HOME_DAY_CARE":
           partBusAddOnsDiscount = 1;
