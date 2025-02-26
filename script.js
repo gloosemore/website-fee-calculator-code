@@ -7,6 +7,7 @@ const pricePkgHOME_DAY_CARE = 185;
 const pricePkgFULL_TIME_STUDENTS = 90;
 const priceAddOnBUSINESS = 50;
 const priceAddOnRENT = 50;
+const priceAddOnHST = 50;
 
 var mePkgType = "STANDARD";
 var partPkgType = "";
@@ -18,6 +19,9 @@ var partBusAddOnsDiscount = 0;
 
 var meRentAddOns = 0;
 var partRentAddOns = 0;
+
+var meHstAddOns = 0;
+var partHstAddOns = 0;
 
 $(document).ready(function () {
   fillPkgGrid();
@@ -83,19 +87,7 @@ const fillPkgGrid = function () {
     for (var col = 1; col <= colCount; col++) {
       if (currPkgNumb > pkgs.length) break;
       const currPkg = pkgs[currPkgNumb - 1];
-      // if (col == 2) {
-      //   html += "<div class='custom-card custom-card-middle col-md-6 p-3'>";
-      // } else {
-      //   html += "<div class='custom-card col-md-6 p-3'>";
-      // }
       html += "<div class='col-12 col-md-6 mt-0'>";
-      // if (col == 1) {
-      //   html +=
-      //     "<div class='custom-card custom-card-left col-12 col-md-6 p-3'>";
-      // } else {
-      //   html +=
-      //     "<div class='custom-card custom-card-right col-12 col-md-6 p-3'>";
-      // }
       html += "<div class='custom-card p-3'>";
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
@@ -145,13 +137,11 @@ const fillPkgGrid = function () {
 const pkgChangeHandlers = function () {
   $(".pkg-me-but").click(function () {
     const buttonId = $(this).attr("id");
-    console.log("buttonId=", buttonId);
 
     const newPkgType = buttonId
       .substring(11, 30)
       .replaceAll(" ", "_")
       .replaceAll("-", "_");
-    console.log("newPkgType=", newPkgType);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
@@ -187,13 +177,11 @@ const pkgChangeHandlers = function () {
   // Handle "Partner" button clicks
   $(".pkg-part-but").click(function () {
     const buttonId = $(this).attr("id");
-    console.log("buttonId=", buttonId);
 
     const newPkgType = buttonId
       .substring(13, 30)
       .replaceAll(" ", "_")
       .replaceAll("-", "_");
-    console.log("newPkgType=", newPkgType);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
@@ -232,16 +220,24 @@ const addOnHandler = function () {
     const cls = $(this).attr("class");
     console.log("cls=", cls);
 
+    const addOnLimit = 5;
+
     if (cls.includes("part")) {
       if (cls.includes("rent")) {
         if (cls.includes("increm")) {
-          if (partRentAddOns < 10) partRentAddOns += 1;
+          if (partRentAddOns < addOnLimit) partRentAddOns += 1;
         } else {
           if (partRentAddOns > 0) partRentAddOns -= 1;
         }
+      } else if (cls.includes("hst")) {
+        if (cls.includes("increm")) {
+          if (partHstAddOns < addOnLimit) partHstAddOns += 1;
+        } else {
+          if (partHstAddOns > 0) partHstAddOns -= 1;
+        }
       } else {
         if (cls.includes("increm")) {
-          if (partBusAddOns < 10) partBusAddOns += 1;
+          if (partBusAddOns < addOnLimit) partBusAddOns += 1;
         } else {
           if (partBusAddOns > 0) partBusAddOns -= 1;
         }
@@ -249,13 +245,19 @@ const addOnHandler = function () {
     } else {
       if (cls.includes("rent")) {
         if (cls.includes("increm")) {
-          if (meRentAddOns < 10) meRentAddOns += 1;
+          if (meRentAddOns < addOnLimit) meRentAddOns += 1;
         } else {
           if (meRentAddOns > 0) meRentAddOns -= 1;
         }
+      } else if (cls.includes("hst")) {
+        if (cls.includes("increm")) {
+          if (meHstAddOns < addOnLimit) meHstAddOns += 1;
+        } else {
+          if (meHstAddOns > 0) meHstAddOns -= 1;
+        }
       } else {
         if (cls.includes("increm")) {
-          if (meBusAddOns < 10) meBusAddOns += 1;
+          if (meBusAddOns < addOnLimit) meBusAddOns += 1;
         } else {
           if (meBusAddOns > 0) meBusAddOns -= 1;
         }
@@ -317,48 +319,52 @@ const updatePrices = function () {
       pricePartCore = pricePkgFULL_TIME_STUDENTS;
       break;
   }
-
   const priceTotalCore = priceMeCore + pricePartCore;
+  var coreCount = 1;
+  if (pricePartCore != 0) coreCount += 1;
 
-  $("#price-me-core").html("$" + priceMeCore);
-  $("#price-part-core").html("$" + pricePartCore);
-  $("#price-total-core").html("$" + priceTotalCore);
+  $("#sum-core-tax-label").html(coreCount + "x Core Tax Service");
+  $("#sum-core-tax-amount").html("$" + priceTotalCore);
 
-  console.log("meBusAddOns=", meBusAddOns);
-  console.log("meBusAddOnsDiscount=", meBusAddOnsDiscount);
+  // $("#price-me-core").html("$" + priceMeCore);
+  // $("#price-part-core").html("$" + pricePartCore);
+  // $("#price-total-core").html("$" + priceTotalCore);
 
-  const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
-  const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
+  // console.log("meBusAddOns=", meBusAddOns);
+  // console.log("meBusAddOnsDiscount=", meBusAddOnsDiscount);
 
-  console.log("priceMeBusAddOns=", priceMeBusAddOns);
+  // const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
+  // const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
 
-  const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
-  const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
-  const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
+  // console.log("priceMeBusAddOns=", priceMeBusAddOns);
 
-  $("#price-me-bus").html("(" + totalMeBusAddOns + ") $" + priceMeBusAddOns);
-  $("#price-part-bus").html(
-    "(" + totalPartBusAddOns + ") $" + pricePartBusAddOns
-  );
-  $("#price-total-bus").html("$" + priceTotalBusAddOns);
+  // const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
+  // const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
+  // const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
 
-  const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
-  const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
-  const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
+  // $("#price-me-bus").html("(" + totalMeBusAddOns + ") $" + priceMeBusAddOns);
+  // $("#price-part-bus").html(
+  //   "(" + totalPartBusAddOns + ") $" + pricePartBusAddOns
+  // );
+  // $("#price-total-bus").html("$" + priceTotalBusAddOns);
 
-  $("#price-me-rent").html("(" + meRentAddOns + ") $" + priceMeRentAddOns);
-  $("#price-part-rent").html(
-    "(" + partRentAddOns + ") $" + pricePartRentAddOns
-  );
-  $("#price-total-rent").html("$" + priceTotalRentAddOns);
+  // const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
+  // const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
+  // const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
 
-  const subtotal = priceTotalCore + priceTotalBusAddOns + priceTotalRentAddOns;
-  const hst = subtotal * 0.13;
-  const total = subtotal + hst;
+  // $("#price-me-rent").html("(" + meRentAddOns + ") $" + priceMeRentAddOns);
+  // $("#price-part-rent").html(
+  //   "(" + partRentAddOns + ") $" + pricePartRentAddOns
+  // );
+  // $("#price-total-rent").html("$" + priceTotalRentAddOns);
 
-  $("#price-subtotal").html("<b>$" + subtotal.toFixed(2) + "</b>");
-  $("#price-hst").html("<b>$" + hst.toFixed(2) + "</b>");
-  $("#price-total").html("<b>$" + total.toFixed(2) + "</b>");
+  // const subtotal = priceTotalCore + priceTotalBusAddOns + priceTotalRentAddOns;
+  // const hst = subtotal * 0.13;
+  // const total = subtotal + hst;
+
+  // $("#price-subtotal").html("<b>$" + subtotal.toFixed(2) + "</b>");
+  // $("#price-hst").html("<b>$" + hst.toFixed(2) + "</b>");
+  // $("#price-total").html("<b>$" + total.toFixed(2) + "</b>");
 };
 
 const updateAddOnsCount = function () {
