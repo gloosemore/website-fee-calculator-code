@@ -253,7 +253,6 @@ table {
 }
 table th {
     text-decoration: underline;
-    min-width: 200px;
 }
 table tr, table th, table td {
     border: 1px solid white;
