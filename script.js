@@ -400,21 +400,27 @@ const updatePrices = function () {
   $("#sum-core-tax-label").html(coreCount + "x Core Tax Service");
   $("#sum-core-tax-amount").html("$" + priceTotalCore);
 
-  // $("#price-me-core").html("$" + priceMeCore);
-  // $("#price-part-core").html("$" + pricePartCore);
-  // $("#price-total-core").html("$" + priceTotalCore);
+  console.log("meBusAddOns=", meBusAddOns);
+  console.log("meBusAddOnsDiscount=", meBusAddOnsDiscount);
+  const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
+  const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
+  const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
+  const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
 
-  // console.log("meBusAddOns=", meBusAddOns);
-  // console.log("meBusAddOnsDiscount=", meBusAddOnsDiscount);
+  const countTotalBusAddOns = totalMeBusAddOns + totalPartBusAddOns;
+  const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
+  if (countTotalBusAddOns == 0) {
+    $("#sum-bus-addon-row").addClass("hidden");
+  } else {
+    $("#sum-bus-addon-row").removeClass("hidden");
+    $("#sum-bus-addon-label").html(countTotalBusAddOns + "x Business Add-Ons");
+    $("#sum-bus-addon-amount").html("$" + priceTotalBusAddOns);
+  }
 
-  // const totalMeBusAddOns = meBusAddOns + meBusAddOnsDiscount;
-  // const priceMeBusAddOns = meBusAddOns * priceAddOnBUSINESS;
-
-  // console.log("priceMeBusAddOns=", priceMeBusAddOns);
-
-  // const totalPartBusAddOns = partBusAddOns + partBusAddOnsDiscount;
-  // const pricePartBusAddOns = partBusAddOns * priceAddOnBUSINESS;
-  // const priceTotalBusAddOns = priceMeBusAddOns + pricePartBusAddOns;
+  //   <tr id="sum-bus-addon-row">
+  //   <td id="sum-bus-addon-label">2x Businesses Add-On</td>
+  //   <td id="sum-bus-addon-amount">$500</td>
+  // </tr>
 
   // $("#price-me-bus").html("(" + totalMeBusAddOns + ") $" + priceMeBusAddOns);
   // $("#price-part-bus").html(

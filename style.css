@@ -11,6 +11,10 @@ width using iFrame in Wix */
 
 /* BASE STYLES */
 
+.hidden {
+    display: none;
+}
+
 /* "Price Calculator */
 #title {
     text-align: center;
