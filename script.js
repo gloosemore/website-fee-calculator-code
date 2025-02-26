@@ -144,7 +144,7 @@ const pkgChangeHandlers = function () {
 
     console.log("buttonId=", buttonId);
 
-    const newPkgType = buttonId.substring(11, 30);
+    const newPkgType = buttonId.substring(11, 50);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
@@ -185,7 +185,7 @@ const pkgChangeHandlers = function () {
 
     console.log("buttonId=", buttonId);
 
-    const newPkgType = buttonId.substring(13, 30);
+    const newPkgType = buttonId.substring(13, 50);
 
     console.log("newPkgType=", newPkgType);
 
