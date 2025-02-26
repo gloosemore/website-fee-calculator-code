@@ -447,32 +447,15 @@ const updatePrices = function () {
     $("#sum-hst-addon-amount").html("$" + priceTotalHstAddOns);
   }
 
-  //   <tr id="sum-bus-addon-row">
-  //   <td id="sum-bus-addon-label">2x Businesses Add-On</td>
-  //   <td id="sum-bus-addon-amount">$500</td>
-  // </tr>
+  const subtotal =
+    priceTotalCore +
+    priceTotalBusAddOns +
+    priceTotalRentAddOns +
+    priceTotalHstAddOns;
+  const hst = subtotal * 0.13;
+  const total = subtotal + hst;
 
-  // $("#price-me-bus").html("(" + totalMeBusAddOns + ") $" + priceMeBusAddOns);
-  // $("#price-part-bus").html(
-  //   "(" + totalPartBusAddOns + ") $" + pricePartBusAddOns
-  // );
-  // $("#price-total-bus").html("$" + priceTotalBusAddOns);
-
-  // const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
-  // const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
-  // const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
-
-  // $("#price-me-rent").html("(" + meRentAddOns + ") $" + priceMeRentAddOns);
-  // $("#price-part-rent").html(
-  //   "(" + partRentAddOns + ") $" + pricePartRentAddOns
-  // );
-  // $("#price-total-rent").html("$" + priceTotalRentAddOns);
-
-  // const subtotal = priceTotalCore + priceTotalBusAddOns + priceTotalRentAddOns;
-  // const hst = subtotal * 0.13;
-  // const total = subtotal + hst;
-
-  // $("#price-subtotal").html("<b>$" + subtotal.toFixed(2) + "</b>");
-  // $("#price-hst").html("<b>$" + hst.toFixed(2) + "</b>");
-  // $("#price-total").html("<b>$" + total.toFixed(2) + "</b>");
+  $("#sum-subtotal-amount").html("$" + subtotal.toFixed(2));
+  $("#sum-hst-amount").html("$" + hst.toFixed(2));
+  $("#sum-total-amount").html("<$" + total.toFixed(2));
 };
