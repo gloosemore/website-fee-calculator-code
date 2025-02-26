@@ -142,10 +142,7 @@ const pkgChangeHandlers = function () {
   $(".pkg-me-but").click(function () {
     const buttonId = $(this).attr("id");
 
-    const newPkgType = buttonId
-      .substring(11, 30)
-      .replaceAll(" ", "_")
-      .replaceAll("-", "_");
+    const newPkgType = buttonId.substring(11, 30);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
@@ -182,10 +179,7 @@ const pkgChangeHandlers = function () {
   $(".pkg-part-but").click(function () {
     const buttonId = $(this).attr("id");
 
-    const newPkgType = buttonId
-      .substring(13, 30)
-      .replaceAll(" ", "_")
-      .replaceAll("-", "_");
+    const newPkgType = buttonId.substring(13, 30);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
