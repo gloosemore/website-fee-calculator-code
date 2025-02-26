@@ -162,7 +162,7 @@ const pkgChangeHandlers = function () {
 
       switch (mePkgType) {
         case "GIG_ECONOMY":
-          meBusAddOnsDiscount = 2;
+          meBusAddOnsDiscount = 1;
           break;
         case "HOME_DAY_CARE":
           meBusAddOnsDiscount = 1;
