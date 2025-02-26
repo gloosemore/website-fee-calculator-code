@@ -251,15 +251,13 @@ table tr {
 }
 table th {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 table td {
-    padding: 20px;
+    padding: 10px;
 }
 .table-cell-inverted {
     background-color: white;
     color: #0d6efd;
-}
-.total-row {
-    max-height: 40px;
+    padding: 20px !important;
 }
