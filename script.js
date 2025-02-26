@@ -96,7 +96,7 @@ const fillPkgGrid = function () {
       html += "<div class='custom-card-top-wrap'>";
       html += "<h3>" + currPkg["name"] + "</h3>";
       html += currPkg["desc"];
-      html += "<h6 class='custom-card-price'>" + currPkg["price"] + "</h6>";
+      html += "<h6 class='price-tag'>" + currPkg["price"] + "</h6>";
       html += "</div>";
       html += "<div class='custom-card-bot-wrap'>";
       html += "<div class='row g-2'>";

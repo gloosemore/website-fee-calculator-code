@@ -133,10 +133,11 @@ displaying buttons and toggling them on/off (primary->success) */
 }
 
 /* price tag for each card */
-.custom-card-price {
+.price-tag {
     color: #0d6efd;
     margin-bottom: 15px;
 }
+
 
 /* bottom part of each card contains the buttons, top auto pushes to bottom */
 .custom-card-bot-wrap {
