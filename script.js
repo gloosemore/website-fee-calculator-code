@@ -87,6 +87,10 @@ const fillPkgGrid = function () {
     for (var col = 1; col <= colCount; col++) {
       if (currPkgNumb > pkgs.length) break;
       const currPkg = pkgs[currPkgNumb - 1];
+      const currPkgId = currPkg["name"]
+        .replaceAll(" ", "_")
+        .replaceAll("-", "_");
+
       html += "<div class='col-12 col-md-6 mt-0'>";
       html += "<div class='custom-card p-3'>";
       html += "<div class='custom-card-top-wrap'>";
@@ -103,19 +107,19 @@ const fillPkgGrid = function () {
       }
       html +=
         "<button id='pkg-me-but-" +
-        currPkg["name"] +
+        currPkgId +
         "' class='pkg-me-but btn " +
         useMeStyle +
         " w-100'>For Me</button>";
       html += "</div>";
       html += "<div class='col-6'>";
       var usePartStyle = "btn-style-primary";
-      if (currPkg["name"] == partPkgType) {
+      if (currPkgId == partPkgType) {
         usePartStyle = "btn-style-success";
       }
       html +=
         "<button id='pkg-part-but-" +
-        currPkg["name"] +
+        currPkgId +
         "' class='pkg-part-but btn " +
         usePartStyle +
         " w-100'>Partner</button>";
