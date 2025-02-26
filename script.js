@@ -417,6 +417,21 @@ const updatePrices = function () {
     $("#sum-bus-addon-amount").html("$" + priceTotalBusAddOns);
   }
 
+  const totalMeRentAddOns = meRentAddOns + meRentAddOnsDiscount;
+  const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
+  const totalPartRentAddOns = partRentAddOns + partRentAddOnsDiscount;
+  const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
+
+  const countTotalRentAddOns = totalMeRentAddOns + totalPartRentAddOns;
+  const priceTotalRentAddOns = priceMeRentAddOns + pricePartRentAddOns;
+  if (countTotalRentAddOns == 0) {
+    $("#sum-rent-addon-row").addClass("hidden");
+  } else {
+    $("#sum-rent-addon-row").removeClass("hidden");
+    $("#sum-rent-addon-label").html(countTotalRentAddOns + "x Rental Add-Ons");
+    $("#sum-rent-addon-amount").html("$" + priceTotalRentAddOns);
+  }
+
   //   <tr id="sum-bus-addon-row">
   //   <td id="sum-bus-addon-label">2x Businesses Add-On</td>
   //   <td id="sum-bus-addon-amount">$500</td>

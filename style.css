@@ -14,6 +14,9 @@ width using iFrame in Wix */
 .hidden {
     display: none;
 }
+.bold {
+    font-weight: bold;
+}
 
 /* "Price Calculator */
 #title {
