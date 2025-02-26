@@ -417,9 +417,9 @@ const updatePrices = function () {
     $("#sum-bus-addon-amount").html("$" + priceTotalBusAddOns);
   }
 
-  const totalMeRentAddOns = meRentAddOns + meRentAddOnsDiscount;
+  const totalMeRentAddOns = meRentAddOns;
   const priceMeRentAddOns = meRentAddOns * priceAddOnRENT;
-  const totalPartRentAddOns = partRentAddOns + partRentAddOnsDiscount;
+  const totalPartRentAddOns = partRentAddOns;
   const pricePartRentAddOns = partRentAddOns * priceAddOnRENT;
 
   const countTotalRentAddOns = totalMeRentAddOns + totalPartRentAddOns;
@@ -432,9 +432,9 @@ const updatePrices = function () {
     $("#sum-rent-addon-amount").html("$" + priceTotalRentAddOns);
   }
 
-  const totalMeHstAddOns = meHstAddOns + meHstAddOnsDiscount;
+  const totalMeHstAddOns = meHstAddOns;
   const priceMeHstAddOns = meHstAddOns * priceAddOnHST;
-  const totalPartHstAddOns = partHstAddOns + partHstAddOnsDiscount;
+  const totalPartHstAddOns = partHstAddOns;
   const pricePartHstAddOns = partHstAddOns * priceAddOnHST;
 
   const countTotalHstAddOns = totalMeHstAddOns + totalPartHstAddOns;
