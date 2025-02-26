@@ -142,11 +142,15 @@ const pkgChangeHandlers = function () {
   $(".pkg-me-but").click(function () {
     const buttonId = $(this).attr("id");
 
+    console.log("buttonId=", buttonId);
+
     const newPkgType = buttonId.substring(11, 30);
 
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
     meBusAddOnsDiscount = 0;
+
+    console.log("newPkgType=", newPkgType);
 
     $(".pkg-me-but")
       .removeClass("btn-style-success")
@@ -178,6 +182,8 @@ const pkgChangeHandlers = function () {
   // Handle "Partner" button clicks
   $(".pkg-part-but").click(function () {
     const buttonId = $(this).attr("id");
+
+    console.log("buttonId=", buttonId);
 
     const newPkgType = buttonId.substring(13, 30);
 
