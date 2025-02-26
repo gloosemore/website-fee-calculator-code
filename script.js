@@ -269,6 +269,69 @@ const addOnHandler = function () {
   });
 };
 
+const updateAddOnsCount = function () {
+  const meBusCount = meBusAddOns + meBusAddOnsDiscount;
+  const partBusCount = partBusAddOns + partBusAddOnsDiscount;
+  const meRentCount = meRentAddOns;
+  const partRentCount = partRentAddOns;
+  const meHstCount = meHstAddOns;
+  const partHstCount = partHstAddOns;
+
+  $("#add-on-me-bus-count").html(
+    "For Me:&nbsp;&nbsp;<b>" + meBusCount + "</b>"
+  );
+  if (meBusCount) {
+    $("#add-on-me-bus-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-me-bus-count").removeClass("add-on-count-positive");
+  }
+
+  $("#add-on-part-bus-count").html(
+    "Partner:&nbsp;&nbsp;<b>" + (partBusCount + "</b>")
+  );
+  if (partBusCount) {
+    $("#add-on-part-bus-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-part-bus-count").removeClass("add-on-count-positive");
+  }
+
+  $("#add-on-me-rent-count").html(
+    "For Me:&nbsp;&nbsp;<b>" + meRentCount + "</b>"
+  );
+  if (meRentCount) {
+    $("#add-on-me-rent-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-me-rent-count").removeClass("add-on-count-positive");
+  }
+
+  $("#add-on-part-rent-count").html(
+    "Partner:&nbsp;&nbsp;<b>" + partRentCount + "</b>"
+  );
+  if (partRentCount) {
+    $("#add-on-part-rent-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-part-rent-count").removeClass("add-on-count-positive");
+  }
+
+  $("#add-on-me-hst-count").html(
+    "For Me:&nbsp;&nbsp;<b>" + meHstCount + "</b>"
+  );
+  if (meHstCount) {
+    $("#add-on-me-hst-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-me-hst-count").removeClass("add-on-count-positive");
+  }
+
+  $("#add-on-part-hst-count").html(
+    "Partner:&nbsp;&nbsp;<b>" + partHstCount + "</b>"
+  );
+  if (partHstCount) {
+    $("#add-on-part-hst-count").addClass("add-on-count-positive");
+  } else {
+    $("#add-on-part-hst-count").removeClass("add-on-count-positive");
+  }
+};
+
 const updatePrices = function () {
   var priceMeCore = 0;
   switch (mePkgType) {
@@ -365,44 +428,4 @@ const updatePrices = function () {
   // $("#price-subtotal").html("<b>$" + subtotal.toFixed(2) + "</b>");
   // $("#price-hst").html("<b>$" + hst.toFixed(2) + "</b>");
   // $("#price-total").html("<b>$" + total.toFixed(2) + "</b>");
-};
-
-const updateAddOnsCount = function () {
-  const meBusCount = meBusAddOns + meBusAddOnsDiscount;
-  const partBusCount = partBusAddOns + partBusAddOnsDiscount;
-  const meRentCount = meRentAddOns;
-  const partRentCount = partRentAddOns;
-
-  $("#add-on-me-bus-count").html(
-    "For Me:&nbsp;&nbsp;<b>" + meBusCount + "</b>"
-  );
-  if (meBusCount) {
-    $("#add-on-me-bus-count").addClass("add-on-count-positive");
-  } else {
-    $("#add-on-me-bus-count").removeClass("add-on-count-positive");
-  }
-  $("#add-on-part-bus-count").html(
-    "Partner:&nbsp;&nbsp;<b>" + (partBusCount + "</b>")
-  );
-  if (partBusCount) {
-    $("#add-on-part-bus-count").addClass("add-on-count-positive");
-  } else {
-    $("#add-on-part-bus-count").removeClass("add-on-count-positive");
-  }
-  $("#add-on-me-rent-count").html(
-    "For Me:&nbsp;&nbsp;<b>" + meRentCount + "</b>"
-  );
-  if (meRentCount) {
-    $("#add-on-me-rent-count").addClass("add-on-count-positive");
-  } else {
-    $("#add-on-me-rent-count").removeClass("add-on-count-positive");
-  }
-  $("#add-on-part-rent-count").html(
-    "Partner:&nbsp;&nbsp;<b>" + partRentCount + "</b>"
-  );
-  if (partRentCount) {
-    $("#add-on-part-rent-count").addClass("add-on-count-positive");
-  } else {
-    $("#add-on-part-rent-count").removeClass("add-on-count-positive");
-  }
 };
