@@ -248,7 +248,7 @@ table {
 }
 table th {
     text-decoration: underline;
-    width: 200px;
+    min-width: 200px;
 }
 table tr, table th, table td {
     border: 1px solid white;

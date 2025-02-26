@@ -397,7 +397,9 @@ const updatePrices = function () {
   var coreCount = 1;
   if (pricePartCore != 0) coreCount += 1;
 
-  $("#sum-core-tax-label").html(coreCount + "x  Core Tax Service");
+  $("#sum-core-tax-label").html(
+    coreCount + "x&nbsp;&nbsp;&nbsp;Core Tax Service"
+  );
   $("#sum-core-tax-amount").html("$" + priceTotalCore);
 
   console.log("meBusAddOns=", meBusAddOns);
@@ -413,7 +415,9 @@ const updatePrices = function () {
     $("#sum-bus-addon-row").addClass("hidden");
   } else {
     $("#sum-bus-addon-row").removeClass("hidden");
-    $("#sum-bus-addon-label").html(countTotalBusAddOns + "x  Businesses");
+    $("#sum-bus-addon-label").html(
+      countTotalBusAddOns + "x&nbsp;&nbsp;&nbsp;Businesses"
+    );
     $("#sum-bus-addon-amount").html("$" + priceTotalBusAddOns);
   }
 
@@ -429,7 +433,7 @@ const updatePrices = function () {
   } else {
     $("#sum-rent-addon-row").removeClass("hidden");
     $("#sum-rent-addon-label").html(
-      countTotalRentAddOns + "x  Rental Properties"
+      countTotalRentAddOns + "x&nbsp;&nbsp;&nbsp;Rental Properties"
     );
     $("#sum-rent-addon-amount").html("$" + priceTotalRentAddOns);
   }
@@ -445,7 +449,9 @@ const updatePrices = function () {
     $("#sum-hst-addon-row").addClass("hidden");
   } else {
     $("#sum-hst-addon-row").removeClass("hidden");
-    $("#sum-hst-addon-label").html(countTotalHstAddOns + "x  HST Filings");
+    $("#sum-hst-addon-label").html(
+      countTotalHstAddOns + "x&nbsp;&nbsp;&nbsp;HST Filings"
+    );
     $("#sum-hst-addon-amount").html("$" + priceTotalHstAddOns);
   }
 
