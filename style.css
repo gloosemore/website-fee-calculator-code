@@ -227,10 +227,7 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* container contains the table... */
 #summary-container {
-    display: flex;
-    flex-direction: row;
-    padding-left: 0px;
-    padding-right: 0px;
+
 }
 
 /* table containing the summary data */
