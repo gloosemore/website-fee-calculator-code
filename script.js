@@ -181,6 +181,8 @@ const pkgChangeHandlers = function () {
 
     const newPkgType = buttonId.substring(13, 30);
 
+    console.log("newPkgType=", newPkgType);
+
     // reset package, in case user just selected a package they already have,
     // which effectively disconnects it.
     partBusAddOnsDiscount = 0;
@@ -381,6 +383,11 @@ const updatePrices = function () {
       break;
   }
   const priceTotalCore = priceMeCore + pricePartCore;
+
+  console.log("priceMeCore=", priceMeCore);
+  console.log("pricePartCore=", pricePartCore);
+  console.log("priceTotalCore=", priceTotalCore);
+
   var coreCount = 1;
   if (pricePartCore != 0) coreCount += 1;
 
