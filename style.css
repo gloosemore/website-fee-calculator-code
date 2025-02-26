@@ -246,6 +246,9 @@ displaying buttons and toggling them on/off (primary->success) */
 table {
     margin: 0px;
 }
+table th {
+    text-decoration: underline;
+}
 table tr, table th, table td {
     border: 1px solid white;
 }
