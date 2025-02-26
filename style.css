@@ -76,8 +76,8 @@ displaying buttons and toggling them on/off (primary->success) */
 }
 .btn-style-primary:hover {
     color: white;
-    border-color: #0d6efd;
-    background-color: #0d6efd;
+    border-color: #26117C;
+    background-color: #26117C;
 }
 .btn-style-success, .btn-style-success:hover {
     color: white;
@@ -87,8 +87,8 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* plus/minus buttons used in add-on area for increm/decrem addon counts */
 .btn-style-plus-minus {
-    border-color: #0d6efd;
-    color: #0d6efd;
+    border-color: #26117C;
+    color: #26117C;
     width: 40px;
     height: 40px;
     font-weight: bold;
@@ -97,7 +97,7 @@ displaying buttons and toggling them on/off (primary->success) */
 }
 .btn-style-plus-minus:hover {
     color: white;
-    background-color: #0d6efd;
+    background-color: #26117C;
 }
 
 /* make text white */
@@ -137,7 +137,7 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* price tag for each card */
 .price-tag {
-    color: #0d6efd;
+    color: #26117C;
     margin-bottom: 15px;
 }
 
@@ -150,7 +150,8 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* hovering a card highlights a border */
 .custom-card:hover {
-    border-color: #0d6efd;
+    /* border-color: #0d6efd; */
+    border-color: #26117C;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -179,7 +180,7 @@ displaying buttons and toggling them on/off (primary->success) */
 
 /* hovering an add-on applies a border */
 .add-on:hover {
-    border-color: #0d6efd;
+    border-color: #26117C;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -232,7 +233,7 @@ displaying buttons and toggling them on/off (primary->success) */
     padding: 15px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #0d6efd;
+    background-color: #26117C;
 }
 
 /* container contains the table... */
@@ -258,7 +259,7 @@ table tr.title-row th, table tr.total-row td {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: white;
-    color: #0d6efd;
+    color: #26117C;
     font-weight: bold;
 } 
 
